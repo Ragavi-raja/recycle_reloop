@@ -40,8 +40,17 @@ jobs:
       - name: Build APK
         run: flutter build apk --release
 
-      - name: Upload APK
+      - name: Upload APK to GitHub
         uses: actions/upload-artifact@v4
         with:
           name: release-apk
           path: build/app/outputs/flutter-apk/app-release.apk
+
+      - name: Upload APK to Google Drive
+        uses: artemnovichkov/gdrive-upload@v1
+        with:
+          path: build/app/outputs/flutter-apk/app-release.apk
+          name: reloop-${{ github.sha }}.apk
+          folder: ${{ secrets.GDRIVE_FOLDER_ID }}
+        env:
+          GDRIVE_CREDENTIALS: ${{ secrets.GDRIVE_CREDENTIALS }}
