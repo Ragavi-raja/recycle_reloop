@@ -1,55 +1,85 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'home/home_tab.dart';
-import 'recycle/recycle_tab.dart';
-import 'profile/profile_tab.dart';
-import 'stats/stats_tab.dart';
+import '../theme/app_theme.dart';
 
-class HomeScreen extends StatefulWidget {
+class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
-
-  @override
-  State<HomeScreen> createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
-  int _currentIndex = 0;
-
-  final List<Widget> _screens = [
-    const HomeTab(),
-    const RecycleTab(),
-    const StatsTab(),
-    const ProfileTab(),
-  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _screens[_currentIndex],
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _currentIndex,
-        onTap: (index) => setState(() => _currentIndex = index),
-        type: BottomNavigationBarType.fixed,
-        selectedItemColor: Theme.of(context).primaryColor,
-        unselectedItemColor: Colors.grey,
-        items: [
-          BottomNavigationBarItem(
-            icon: const Icon(Icons.home),
-            label: 'Home',
+      appBar: AppBar(
+        title: const Text('Reloop'),
+        backgroundColor: AppTheme.primaryBlue,
+      ),
+      body: GridView.count(
+        crossAxisCount: 2,
+        padding: const EdgeInsets.all(16.0),
+        children: [
+          _buildFeatureCard(
+            context,
+            'Track Pickup',
+            Icons.local_shipping,
+            () {
+              // TODO: Implement tracking feature
+            },
           ),
-          BottomNavigationBarItem(
-            icon: const Icon(Icons.recycling),
-            label: 'Recycle',
+          _buildFeatureCard(
+            context,
+            'Schedule Pickup',
+            Icons.calendar_today,
+            () {
+              // TODO: Implement scheduling feature
+            },
           ),
-          BottomNavigationBarItem(
-            icon: const Icon(Icons.bar_chart),
-            label: 'Stats',
+          _buildFeatureCard(
+            context,
+            'Rewards',
+            Icons.card_giftcard,
+            () {
+              // TODO: Implement rewards feature
+            },
           ),
-          BottomNavigationBarItem(
-            icon: const Icon(Icons.person),
-            label: 'Profile',
+          _buildFeatureCard(
+            context,
+            'Community',
+            Icons.people,
+            () {
+              // TODO: Implement community feature
+            },
           ),
         ],
+      ),
+    );
+  }
+
+  Widget _buildFeatureCard(
+    BuildContext context,
+    String title,
+    IconData icon,
+    VoidCallback onTap,
+  ) {
+    return Card(
+      elevation: 4,
+      child: InkWell(
+        onTap: onTap,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(
+              icon,
+              size: 48,
+              color: AppTheme.primaryBlue,
+            ),
+            const SizedBox(height: 8),
+            Text(
+              title,
+              style: const TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

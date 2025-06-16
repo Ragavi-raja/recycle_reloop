@@ -116,7 +116,7 @@ class RecycleTab extends StatelessWidget {
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
               colors: [
-                color.withOpacity(0.7),
+                color.withAlpha(179),
                 color,
               ],
             ),

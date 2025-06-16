@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'home_screen.dart';
 import '../theme/app_theme.dart';
+import 'home_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -13,7 +12,7 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
-  late Animation<double> _animation;
+  late Animation<double> _fadeAnimation;
 
   @override
   void initState() {
@@ -23,15 +22,13 @@ class _SplashScreenState extends State<SplashScreen>
       vsync: this,
     );
 
-    _animation = CurvedAnimation(
-      parent: _controller,
-      curve: Curves.easeInOut,
-    );
+    _fadeAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(_controller);
 
     _controller.forward();
 
-    // Navigate to home screen after animation
+    // Navigate to home screen after delay
     Future.delayed(const Duration(seconds: 3), () {
+      if (!mounted) return;
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(builder: (context) => const HomeScreen()),
       );
@@ -50,48 +47,44 @@ class _SplashScreenState extends State<SplashScreen>
       backgroundColor: AppTheme.primaryBlue,
       body: Center(
         child: FadeTransition(
-          opacity: _animation,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Container(
-                width: 120.w,
-                height: 120.w,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(20.r),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withOpacity(0.1),
-                      blurRadius: 10,
-                      spreadRadius: 2,
-                    ),
-                  ],
+          opacity: _fadeAnimation,
+          child: Container(
+            padding: const EdgeInsets.all(24),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(16),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withAlpha(25),
+                  blurRadius: 10,
+                  offset: const Offset(0, 4),
                 ),
-                child: Icon(
+              ],
+            ),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Icon(
                   Icons.recycling,
-                  size: 80.w,
-                  color: AppTheme.primaryGreen,
+                  size: 64,
+                  color: AppTheme.primaryBlue,
                 ),
-              ),
-              SizedBox(height: 20.h),
-              Text(
-                'Reloop',
-                style: TextStyle(
-                  fontSize: 32.sp,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
+                const SizedBox(height: 16),
+                Text(
+                  'Reloop',
+                  style: Theme.of(context).textTheme.displayLarge?.copyWith(
+                        color: AppTheme.primaryBlue,
+                      ),
                 ),
-              ),
-              SizedBox(height: 10.h),
-              Text(
-                'Recycle. Reuse. Reloop.',
-                style: TextStyle(
-                  fontSize: 16.sp,
-                  color: Colors.white70,
+                const SizedBox(height: 8),
+                Text(
+                  'Recycle. Reward. Repeat.',
+                  style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                        color: AppTheme.textLight,
+                      ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
