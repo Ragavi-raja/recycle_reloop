@@ -45,13 +45,3 @@ jobs:
         with:
           name: release-apk
           path: build/app/outputs/flutter-apk/app-release.apk
-
-      - name: Upload APK to Google Drive
-        uses: w9jds/gdrive-upload-action@v1.0.3
-        with:
-          service-account-key: ${{ secrets.GDRIVE_SERVICE_ACCOUNT_KEY }}
-          folder-id: ${{ secrets.GDRIVE_FOLDER_ID }}
-          file: build/app/outputs/flutter-apk/app-release.apk
-
-        env:
-          GDRIVE_CREDENTIALS: ${{ secrets.GDRIVE_CREDENTIALS }}
