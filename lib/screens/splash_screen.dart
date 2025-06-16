@@ -50,21 +50,21 @@ class _SplashScreenState extends State<SplashScreen>
           opacity: _fadeAnimation,
           child: Container(
             padding: const EdgeInsets.all(24),
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               color: Colors.white,
-              borderRadius: BorderRadius.circular(16),
+              borderRadius: BorderRadius.all(Radius.circular(16)),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withAlpha(25),
+                  color: Color.fromARGB(25, 0, 0, 0),
                   blurRadius: 10,
-                  offset: const Offset(0, 4),
+                  offset: Offset(0, 4),
                 ),
               ],
             ),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                Icon(
+                const Icon(
                   Icons.recycling,
                   size: 64,
                   color: AppTheme.primaryBlue,

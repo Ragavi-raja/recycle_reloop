@@ -154,7 +154,7 @@ class StatsTab extends StatelessWidget {
             SizedBox(height: 8.h),
             LinearProgressIndicator(
               value: progress,
-              backgroundColor: color.withOpacity(0.2),
+              backgroundColor: Colors.black.withAlpha(25),
               valueColor: AlwaysStoppedAnimation<Color>(color),
               minHeight: 8.h,
               borderRadius: BorderRadius.circular(4.r),
