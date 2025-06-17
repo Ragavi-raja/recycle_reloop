@@ -5,6 +5,15 @@ import 'home_screen.dart';
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
 
+  // Static method to navigate to splash screen from anywhere
+  static void navigateToSplash(BuildContext context) {
+    Navigator.pushAndRemoveUntil(
+      context,
+      MaterialPageRoute(builder: (context) => const SplashScreen()),
+      (route) => false, // Remove all previous routes
+    );
+  }
+
   @override
   State<SplashScreen> createState() => _SplashScreenState();
 }
@@ -24,6 +33,7 @@ class _SplashScreenState extends State<SplashScreen>
 
     _fadeAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(_controller);
 
+    // Start the animation
     _controller.forward();
 
     // Navigate to home screen after delay
@@ -43,48 +53,32 @@ class _SplashScreenState extends State<SplashScreen>
 
   @override
   Widget build(BuildContext context) {
+    final screenSize = MediaQuery.of(context).size;
+
     return Scaffold(
-      backgroundColor: AppTheme.primaryBlue,
-      body: Center(
-        child: FadeTransition(
-          opacity: _fadeAnimation,
-          child: Container(
-            padding: const EdgeInsets.all(24),
-            decoration: const BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.all(Radius.circular(16)),
-              boxShadow: [
-                BoxShadow(
-                  color: Color.fromARGB(25, 0, 0, 0),
-                  blurRadius: 10,
-                  offset: Offset(0, 4),
-                ),
-              ],
-            ),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                const Icon(
-                  Icons.recycling,
-                  size: 64,
-                  color: AppTheme.primaryBlue,
-                ),
-                const SizedBox(height: 16),
-                Text(
-                  'Reloop',
-                  style: Theme.of(context).textTheme.displayLarge?.copyWith(
-                        color: AppTheme.primaryBlue,
-                      ),
-                ),
-                const SizedBox(height: 8),
-                Text(
-                  'Recycle. Reward. Repeat.',
-                  style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                        color: AppTheme.textLight,
-                      ),
-                ),
-              ],
-            ),
+      backgroundColor: Colors.white,
+      body: FadeTransition(
+        opacity: _fadeAnimation,
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              // Logo Image with GIF animation
+              Image.asset(
+                'assets/images/splashlogo.gif',
+                width: screenSize.width * 0.6, // 60% of screen width
+                height: screenSize.width * 0.3,
+                fit: BoxFit.contain,
+                gaplessPlayback: true,
+              ),
+              // Bottom image with horizontal padding
+              Image.asset(
+                'assets/images/splash_bottom.png',
+                width:
+                    screenSize.width - 64, // Full width minus 32px on each side
+                fit: BoxFit.fitWidth,
+              ),
+            ],
           ),
         ),
       ),

@@ -75,6 +75,7 @@ flutter:
   
   assets:
     - assets/images/
+    - assets/images/splashlogo.gif
     - assets/icons/
 
 flutter_native_splash:

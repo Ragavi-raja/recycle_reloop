@@ -4,13 +4,15 @@ import 'screens/splash_screen.dart';
 import 'theme/app_theme.dart';
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
   try {
-    WidgetsFlutterBinding.ensureInitialized();
     await Firebase.initializeApp();
-    runApp(const MyApp());
   } catch (e) {
-    debugPrint('Error initializing app: $e');
+    debugPrint('Error initializing Firebase: $e');
   }
+
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -24,6 +26,13 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeMode.system,
       home: const SplashScreen(),
       debugShowCheckedModeBanner: false,
+      builder: (context, child) {
+        return MediaQuery(
+          // Prevent system font scaling
+          data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
+          child: child!,
+        );
+      },
     );
   }
 }
