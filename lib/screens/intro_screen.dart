@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../theme/app_theme.dart';
-import 'main_screen.dart';
+import 'auth/login_screen.dart';
 
 class IntroScreen extends StatefulWidget {
   const IntroScreen({super.key});
@@ -34,10 +34,10 @@ class _IntroScreenState extends State<IntroScreen> {
     ),
   ];
 
-  void _navigateToMainScreen() {
+  void _navigateToLoginScreen() {
     Navigator.pushReplacement(
       context,
-      MaterialPageRoute(builder: (context) => const MainScreen()),
+      MaterialPageRoute(builder: (context) => const LoginScreen()),
     );
   }
 
@@ -47,7 +47,7 @@ class _IntroScreenState extends State<IntroScreen> {
         _currentPage++;
       });
     } else {
-      _navigateToMainScreen();
+      _navigateToLoginScreen();
     }
   }
 
@@ -182,7 +182,7 @@ class _IntroScreenState extends State<IntroScreen> {
                     children: [
                       // Skip button
                       TextButton(
-                        onPressed: _navigateToMainScreen,
+                        onPressed: _navigateToLoginScreen,
                         child: Text(
                           'Skip',
                           style: const TextStyle(
