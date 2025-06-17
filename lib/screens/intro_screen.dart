@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../theme/app_theme.dart';
-import 'home_screen.dart';
+import 'main_screen.dart';
 
 class IntroScreen extends StatefulWidget {
   const IntroScreen({super.key});
@@ -34,10 +34,10 @@ class _IntroScreenState extends State<IntroScreen> {
     ),
   ];
 
-  void _navigateToHome() {
+  void _navigateToMainScreen() {
     Navigator.pushReplacement(
       context,
-      MaterialPageRoute(builder: (context) => const HomeScreen()),
+      MaterialPageRoute(builder: (context) => const MainScreen()),
     );
   }
 
@@ -47,7 +47,7 @@ class _IntroScreenState extends State<IntroScreen> {
         _currentPage++;
       });
     } else {
-      _navigateToHome();
+      _navigateToMainScreen();
     }
   }
 
@@ -182,7 +182,7 @@ class _IntroScreenState extends State<IntroScreen> {
                     children: [
                       // Skip button
                       TextButton(
-                        onPressed: _navigateToHome,
+                        onPressed: _navigateToMainScreen,
                         child: Text(
                           'Skip',
                           style: const TextStyle(

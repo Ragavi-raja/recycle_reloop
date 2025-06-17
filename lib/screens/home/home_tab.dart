@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../theme/app_theme.dart';
 
 class HomeTab extends StatelessWidget {
   const HomeTab({super.key});
@@ -8,142 +8,75 @@ class HomeTab extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          'Reloop',
-          style: TextStyle(
-            fontSize: 24.sp,
-            fontWeight: FontWeight.bold,
+        title: const Text('Home Tab'), // Changed title for clarity
+        backgroundColor: AppTheme.primaryBlue,
+      ),
+      body: GridView.count(
+        crossAxisCount: 2,
+        padding: const EdgeInsets.all(16.0),
+        children: [
+          _buildFeatureCard(
+            context,
+            'Track Pickup',
+            Icons.local_shipping,
+            () {
+              // TODO: Implement tracking feature
+            },
           ),
-        ),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.notifications),
-            onPressed: () {
-              // Handle notifications
+          _buildFeatureCard(
+            context,
+            'Schedule Pickup',
+            Icons.calendar_today,
+            () {
+              // TODO: Implement scheduling feature
+            },
+          ),
+          _buildFeatureCard(
+            context,
+            'Rewards',
+            Icons.card_giftcard,
+            () {
+              // TODO: Implement rewards feature
+            },
+          ),
+          _buildFeatureCard(
+            context,
+            'Community',
+            Icons.people,
+            () {
+              // TODO: Implement community feature
             },
           ),
         ],
       ),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: EdgeInsets.all(16.w),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              // Welcome Card
-              Container(
-                padding: EdgeInsets.all(16.w),
-                decoration: BoxDecoration(
-                  color: Theme.of(context).primaryColor,
-                  borderRadius: BorderRadius.circular(12.r),
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Welcome Back!',
-                      style: TextStyle(
-                        fontSize: 24.sp,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                      ),
-                    ),
-                    SizedBox(height: 8.h),
-                    Text(
-                      'Let\'s make a difference together',
-                      style: TextStyle(
-                        fontSize: 16.sp,
-                        color: Colors.white70,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(height: 24.h),
-
-              // Quick Actions
-              Text(
-                'Quick Actions',
-                style: TextStyle(
-                  fontSize: 20.sp,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              SizedBox(height: 16.h),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  _buildActionCard(
-                    context,
-                    Icons.recycling,
-                    'Recycle Now',
-                    () {
-                      // Handle recycle action
-                    },
-                  ),
-                  _buildActionCard(
-                    context,
-                    Icons.history,
-                    'History',
-                    () {
-                      // Handle history action
-                    },
-                  ),
-                  _buildActionCard(
-                    context,
-                    Icons.leaderboard,
-                    'Stats',
-                    () {
-                      // Handle stats action
-                    },
-                  ),
-                ],
-              ),
-            ],
-          ),
-        ),
-      ),
     );
   }
 
-  Widget _buildActionCard(
+  Widget _buildFeatureCard(
     BuildContext context,
-    IconData icon,
     String title,
+    IconData icon,
     VoidCallback onTap,
   ) {
-    return InkWell(
-      onTap: onTap,
-      child: Container(
-        width: 100.w,
-        padding: EdgeInsets.all(16.w),
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(12.r),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.grey.withAlpha(10),
-              spreadRadius: 1,
-              blurRadius: 4,
-              offset: const Offset(0, 2),
-            ),
-          ],
-        ),
+    return Card(
+      elevation: 4,
+      child: InkWell(
+        onTap: onTap,
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Icon(
               icon,
-              size: 32.w,
-              color: Theme.of(context).primaryColor,
+              size: 48,
+              color: AppTheme.primaryBlue,
             ),
-            SizedBox(height: 8.h),
+            const SizedBox(height: 8),
             Text(
               title,
-              style: TextStyle(
-                fontSize: 14.sp,
-                fontWeight: FontWeight.w500,
+              style: const TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
               ),
-              textAlign: TextAlign.center,
             ),
           ],
         ),

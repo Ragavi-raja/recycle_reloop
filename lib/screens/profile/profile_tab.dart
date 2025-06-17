@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../theme/app_theme.dart'; // Import AppTheme
 
 class ProfileTab extends StatelessWidget {
   const ProfileTab({super.key});
@@ -8,96 +8,77 @@ class ProfileTab extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          'Profile',
-          style: TextStyle(
-            fontSize: 24.sp,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.settings),
-            onPressed: () {
-              // Handle settings
-            },
-          ),
-        ],
+        title: const Text('Profile'),
+        backgroundColor: AppTheme.primaryBlue, // Use primaryBlue from AppTheme
       ),
       body: SingleChildScrollView(
         child: Column(
           children: [
             // Profile Header
             Container(
-              padding: EdgeInsets.all(24.w),
-              color: Theme.of(context).primaryColor,
-              child: Column(
-                children: [
-                  CircleAvatar(
-                    radius: 50.r,
-                    backgroundColor: Colors.white,
-                    child: Icon(
-                      Icons.person,
-                      size: 50.w,
-                      color: Theme.of(context).primaryColor,
+              padding: const EdgeInsets.all(24.0),
+              color:
+                  AppTheme.primaryBlue, // Use primaryBlue for header background
+              child: Center(
+                child: Column(
+                  children: [
+                    CircleAvatar(
+                      radius: 50,
+                      backgroundColor: Colors.white,
+                      child: Icon(
+                        Icons.person,
+                        size: 50,
+                        color: AppTheme.primaryBlue,
+                      ),
                     ),
-                  ),
-                  SizedBox(height: 16.h),
-                  Text(
-                    'John Doe',
-                    style: TextStyle(
-                      fontSize: 24.sp,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
+                    const SizedBox(height: 16),
+                    const Text(
+                      'John Doe',
+                      style: TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
                     ),
-                  ),
-                  SizedBox(height: 8.h),
-                  Text(
-                    'john.doe@example.com',
-                    style: TextStyle(
-                      fontSize: 16.sp,
-                      color: Colors.white70,
+                    const SizedBox(height: 8),
+                    const Text(
+                      'john.doe@example.com',
+                      style: TextStyle(
+                        fontSize: 16,
+                        color: Colors.white70,
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
-
             // Profile Options
             Padding(
-              padding: EdgeInsets.all(16.w),
+              padding: const EdgeInsets.all(16.0),
               child: Column(
                 children: [
+                  _buildProfileOption(
+                    context,
+                    Icons.edit,
+                    'Edit Profile',
+                    () {
+                      // TODO: Implement edit profile navigation
+                    },
+                  ),
+                  _buildProfileOption(
+                    context,
+                    Icons.settings,
+                    'Settings',
+                    () {
+                      // TODO: Implement settings navigation
+                    },
+                  ),
                   _buildProfileOption(
                     context,
                     Icons.history,
                     'Recycling History',
                     () {
-                      // Handle history
-                    },
-                  ),
-                  _buildProfileOption(
-                    context,
-                    Icons.stars,
-                    'Rewards',
-                    () {
-                      // Handle rewards
-                    },
-                  ),
-                  _buildProfileOption(
-                    context,
-                    Icons.location_on,
-                    'Nearby Centers',
-                    () {
-                      // Handle nearby centers
-                    },
-                  ),
-                  _buildProfileOption(
-                    context,
-                    Icons.help,
-                    'Help & Support',
-                    () {
-                      // Handle help
+                      // TODO: Implement recycling history navigation
                     },
                   ),
                   _buildProfileOption(
@@ -105,7 +86,7 @@ class ProfileTab extends StatelessWidget {
                     Icons.logout,
                     'Logout',
                     () {
-                      // Handle logout
+                      // TODO: Implement logout logic
                     },
                     isLogout: true,
                   ),
@@ -126,18 +107,23 @@ class ProfileTab extends StatelessWidget {
     bool isLogout = false,
   }) {
     return Card(
-      margin: EdgeInsets.only(bottom: 12.h),
+      margin: const EdgeInsets.only(bottom: 12),
+      elevation: 2,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(8),
+      ),
       child: ListTile(
         leading: Icon(
           icon,
-          color: isLogout ? Colors.red : Theme.of(context).primaryColor,
+          color:
+              isLogout ? Colors.red : AppTheme.primaryBlue, // Use primaryBlue
         ),
         title: Text(
           title,
           style: TextStyle(
-            fontSize: 16.sp,
+            fontSize: 16,
             fontWeight: FontWeight.w500,
-            color: isLogout ? Colors.red : null,
+            color: isLogout ? Colors.red : AppTheme.textDark,
           ),
         ),
         trailing: const Icon(Icons.chevron_right),
