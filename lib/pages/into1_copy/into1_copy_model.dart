@@ -1,8 +1,9 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'home_screen_widget.dart' show HomeScreenWidget;
+import '/index.dart';
+import 'into1_copy_widget.dart' show Into1CopyWidget;
 import 'package:flutter/material.dart';
 
-class HomeScreenModel extends FlutterFlowModel<HomeScreenWidget> {
+class Into1CopyModel extends FlutterFlowModel<Into1CopyWidget> {
   @override
   void initState(BuildContext context) {}
 

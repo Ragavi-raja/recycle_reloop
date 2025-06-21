@@ -1,6 +1,8 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'splash_screen_model.dart';
 export 'splash_screen_model.dart';
 
@@ -24,6 +26,13 @@ class _SplashScreenWidgetState extends State<SplashScreenWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => SplashScreenModel());
+
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      await Future.delayed(const Duration(milliseconds: 2000));
+
+      context.pushNamed(Into1Widget.routeName);
+    });
   }
 
   @override
@@ -88,39 +97,6 @@ class _SplashScreenWidgetState extends State<SplashScreenWidget> {
                                   .titleLargeIsCustom,
                             ),
                       ),
-                    Container(
-                      width: 50.0,
-                      height: 50.0,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(8.0),
-                        border: Border.all(
-                          color: FlutterFlowTheme.of(context).c1,
-                          width: 1.0,
-                        ),
-                      ),
-                      child: Align(
-                        alignment: AlignmentDirectional(0.0, 0.0),
-                        child: Padding(
-                          padding: EdgeInsets.all(8.0),
-                          child: Text(
-                            '*',
-                            style: FlutterFlowTheme.of(context)
-                                .titleLarge
-                                .override(
-                                  fontFamily: FlutterFlowTheme.of(context)
-                                      .titleLargeFamily,
-                                  color: Color(0xFF1C1C1C),
-                                  fontSize: 24.0,
-                                  letterSpacing: 0.0,
-                                  fontWeight: FontWeight.normal,
-                                  useGoogleFonts: !FlutterFlowTheme.of(context)
-                                      .titleLargeIsCustom,
-                                ),
-                          ),
-                        ),
-                      ),
-                    ),
                     if (responsiveVisibility(
                       context: context,
                       desktop: false,

@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '/main.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 
 import '/index.dart';
@@ -47,29 +46,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => SplashScreenWidget(),
         ),
         FFRoute(
-            name: HomeScreenWidget.routeName,
-            path: HomeScreenWidget.routePath,
-            builder: (context, params) => params.isEmpty
-                ? NavBarPage(initialPage: 'home_screen')
-                : NavBarPage(
-                    initialPage: 'home_screen',
-                    page: HomeScreenWidget(),
-                  )),
-        FFRoute(
-            name: GalleryScreenWidget.routeName,
-            path: GalleryScreenWidget.routePath,
-            builder: (context, params) => params.isEmpty
-                ? NavBarPage(initialPage: 'gallery_screen')
-                : NavBarPage(
-                    initialPage: 'gallery_screen',
-                    page: GalleryScreenWidget(),
-                  )),
-        FFRoute(
-          name: SplashScreenWidget.routeName,
-          path: SplashScreenWidget.routePath,
-          builder: (context, params) => SplashScreenWidget(),
-        ),
-        FFRoute(
           name: LoginWidget.routeName,
           path: LoginWidget.routePath,
           builder: (context, params) => LoginWidget(),
@@ -80,9 +56,39 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => SigninWidget(),
         ),
         FFRoute(
-          name: SelllWidget.routeName,
-          path: SelllWidget.routePath,
-          builder: (context, params) => SelllWidget(),
+          name: CertificatepageWidget.routeName,
+          path: CertificatepageWidget.routePath,
+          builder: (context, params) => CertificatepageWidget(),
+        ),
+        FFRoute(
+          name: Selscrapimage1Widget.routeName,
+          path: Selscrapimage1Widget.routePath,
+          builder: (context, params) => Selscrapimage1Widget(),
+        ),
+        FFRoute(
+          name: Into1Widget.routeName,
+          path: Into1Widget.routePath,
+          builder: (context, params) => Into1Widget(),
+        ),
+        FFRoute(
+          name: Into1CopyWidget.routeName,
+          path: Into1CopyWidget.routePath,
+          builder: (context, params) => Into1CopyWidget(),
+        ),
+        FFRoute(
+          name: Into1CopyCopyWidget.routeName,
+          path: Into1CopyCopyWidget.routePath,
+          builder: (context, params) => Into1CopyCopyWidget(),
+        ),
+        FFRoute(
+          name: Login1Widget.routeName,
+          path: Login1Widget.routePath,
+          builder: (context, params) => Login1Widget(),
+        ),
+        FFRoute(
+          name: Loggin1Widget.routeName,
+          path: Loggin1Widget.routePath,
+          builder: (context, params) => Loggin1Widget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
