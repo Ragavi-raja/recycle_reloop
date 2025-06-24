@@ -76,7 +76,7 @@ class _Into1CopyCopyWidgetState extends State<Into1CopyCopyWidget> {
                       children: [
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
-                              41.0, 32.0, 41.0, 12.0),
+                              0.0, 32.0, 0.0, 12.0),
                           child: Text(
                             'Our Strategy \nto Success',
                             textAlign: TextAlign.center,
@@ -99,7 +99,7 @@ class _Into1CopyCopyWidgetState extends State<Into1CopyCopyWidget> {
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 24.0, 0.0, 24.0, 12.0),
                             child: Text(
-                              'At Recyclekaro, our strategy to success is deeply rooted in staying at forefront of Progress Armed with the latest technology',
+                              'At Recyclekaro, our strategy to success is deeply rooted in staying at forefront of Progress \nArmed with the latest technology ',
                               textAlign: TextAlign.center,
                               style: FlutterFlowTheme.of(context)
                                   .labelMedium
@@ -122,18 +122,14 @@ class _Into1CopyCopyWidgetState extends State<Into1CopyCopyWidget> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 6.0),
-                                child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(8.0),
-                                  child: Image.asset(
-                                    'assets/images/Frame_11_(2).png',
-                                    width: 43.0,
-                                    height: 6.0,
-                                    fit: BoxFit.fitWidth,
-                                    alignment: Alignment(0.0, 0.0),
-                                  ),
+                              ClipRRect(
+                                borderRadius: BorderRadius.circular(8.0),
+                                child: Image.asset(
+                                  'assets/images/Frame_11_(2).png',
+                                  width: 43.0,
+                                  height: 6.0,
+                                  fit: BoxFit.fitWidth,
+                                  alignment: Alignment(0.0, 0.0),
                                 ),
                               ),
                             ],
@@ -179,7 +175,16 @@ class _Into1CopyCopyWidgetState extends State<Into1CopyCopyWidget> {
                                 hoverColor: Colors.transparent,
                                 highlightColor: Colors.transparent,
                                 onTap: () async {
-                                  context.pushNamed(LoginWidget.routeName);
+                                  context.pushNamed(
+                                    LoginWidget.routeName,
+                                    extra: <String, dynamic>{
+                                      kTransitionInfoKey: TransitionInfo(
+                                        hasTransition: true,
+                                        transitionType: PageTransitionType.fade,
+                                        duration: Duration(milliseconds: 0),
+                                      ),
+                                    },
+                                  );
                                 },
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(8.0),

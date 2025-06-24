@@ -54,52 +54,64 @@ class _HomeWidgetState extends State<HomeWidget> {
                   child: ProfileComponentWidget(),
                 ),
               ),
-              Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
-                child: Container(
-                  width: double.infinity,
-                  height: 48.0,
-                  decoration: BoxDecoration(
-                    color: Color(0xFFD1EEE3),
-                    borderRadius: BorderRadius.circular(8.0),
-                  ),
-                  child: Align(
-                    alignment: AlignmentDirectional(-1.0, 0.0),
-                    child: Padding(
-                      padding: EdgeInsets.all(12.0),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(8.0),
-                            child: Image.asset(
-                              'assets/images/identity-key-crown.png',
-                              width: 25.0,
-                              height: 25.0,
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                          Text(
-                            'Tap to update your Profile Information',
-                            style: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  fontFamily: FlutterFlowTheme.of(context)
-                                      .bodyMediumFamily,
-                                  color: Color(0xFF1C1C1C),
-                                  fontSize: 16.0,
-                                  letterSpacing: 0.0,
-                                  fontWeight: FontWeight.bold,
-                                  useGoogleFonts: !FlutterFlowTheme.of(context)
-                                      .bodyMediumIsCustom,
+              if (responsiveVisibility(
+                context: context,
+                desktop: false,
+              ))
+                Expanded(
+                  child: Padding(
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
+                    child: Container(
+                      width: double.infinity,
+                      height: 48.0,
+                      decoration: BoxDecoration(
+                        color: Color(0xFFD1EEE3),
+                        borderRadius: BorderRadius.circular(8.0),
+                      ),
+                      child: Align(
+                        alignment: AlignmentDirectional(-1.0, 0.0),
+                        child: Padding(
+                          padding: EdgeInsets.all(12.0),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              ClipRRect(
+                                borderRadius: BorderRadius.circular(8.0),
+                                child: Image.asset(
+                                  'assets/images/identity-key-crown.png',
+                                  width: 25.0,
+                                  height: 25.0,
+                                  fit: BoxFit.cover,
                                 ),
+                              ),
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 20.0, 0.0),
+                                child: Text(
+                                  'Tap to update your Profile Information',
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .bodyMediumFamily,
+                                        color: Color(0xFF1C1C1C),
+                                        fontSize: 16.0,
+                                        letterSpacing: 0.0,
+                                        fontWeight: FontWeight.bold,
+                                        useGoogleFonts:
+                                            !FlutterFlowTheme.of(context)
+                                                .bodyMediumIsCustom,
+                                      ),
+                                ),
+                              ),
+                            ].divide(SizedBox(width: 12.0)),
                           ),
-                        ].divide(SizedBox(width: 12.0)),
+                        ),
                       ),
                     ),
                   ),
                 ),
-              ),
               Expanded(
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
@@ -676,21 +688,25 @@ class _HomeWidgetState extends State<HomeWidget> {
                           ),
                           Align(
                             alignment: AlignmentDirectional(0.0, 1.0),
-                            child: Text(
-                              'Donate Battery',
-                              textAlign: TextAlign.center,
-                              style: FlutterFlowTheme.of(context)
-                                  .bodySmall
-                                  .override(
-                                    fontFamily: FlutterFlowTheme.of(context)
-                                        .bodySmallFamily,
-                                    fontSize: 12.0,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w500,
-                                    useGoogleFonts:
-                                        !FlutterFlowTheme.of(context)
-                                            .bodySmallIsCustom,
-                                  ),
+                            child: Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  2.0, 0.0, 2.0, 0.0),
+                              child: Text(
+                                'Donate Battery',
+                                textAlign: TextAlign.center,
+                                style: FlutterFlowTheme.of(context)
+                                    .bodySmall
+                                    .override(
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .bodySmallFamily,
+                                      fontSize: 12.0,
+                                      letterSpacing: 0.0,
+                                      fontWeight: FontWeight.w500,
+                                      useGoogleFonts:
+                                          !FlutterFlowTheme.of(context)
+                                              .bodySmallIsCustom,
+                                    ),
+                              ),
                             ),
                           ),
                         ].divide(SizedBox(height: 8.0)),

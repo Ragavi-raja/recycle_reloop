@@ -51,11 +51,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => LoginWidget(),
         ),
         FFRoute(
-          name: SigninWidget.routeName,
-          path: SigninWidget.routePath,
-          builder: (context, params) => SigninWidget(),
-        ),
-        FFRoute(
           name: CertificatepageWidget.routeName,
           path: CertificatepageWidget.routePath,
           builder: (context, params) => CertificatepageWidget(),
@@ -63,7 +58,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: Selscrapimage1Widget.routeName,
           path: Selscrapimage1Widget.routePath,
-          builder: (context, params) => Selscrapimage1Widget(),
+          builder: (context, params) => Selscrapimage1Widget(
+            pageName: params.getParam(
+              'pageName',
+              ParamType.String,
+            ),
+          ),
         ),
         FFRoute(
           name: Into1Widget.routeName,
@@ -81,14 +81,24 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => Into1CopyCopyWidget(),
         ),
         FFRoute(
-          name: Login1Widget.routeName,
-          path: Login1Widget.routePath,
-          builder: (context, params) => Login1Widget(),
+          name: SignupscreenWidget.routeName,
+          path: SignupscreenWidget.routePath,
+          builder: (context, params) => SignupscreenWidget(),
         ),
         FFRoute(
-          name: Loggin1Widget.routeName,
-          path: Loggin1Widget.routePath,
-          builder: (context, params) => Loggin1Widget(),
+          name: OTPScreenWidget.routeName,
+          path: OTPScreenWidget.routePath,
+          builder: (context, params) => OTPScreenWidget(),
+        ),
+        FFRoute(
+          name: HomePageWidget.routeName,
+          path: HomePageWidget.routePath,
+          builder: (context, params) => HomePageWidget(),
+        ),
+        FFRoute(
+          name: NewlocationWidget.routeName,
+          path: NewlocationWidget.routePath,
+          builder: (context, params) => NewlocationWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

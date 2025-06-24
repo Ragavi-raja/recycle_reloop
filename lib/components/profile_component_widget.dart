@@ -41,79 +41,88 @@ class _ProfileComponentWidgetState extends State<ProfileComponentWidget> {
         desktop: false,
       ),
       child: Row(
-        mainAxisSize: MainAxisSize.max,
+        mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Row(
-            mainAxisSize: MainAxisSize.max,
-            children: [
-              Container(
-                width: 40.0,
-                height: 40.0,
-                decoration: BoxDecoration(
-                  color: Color(0xFF006B08),
-                  shape: BoxShape.circle,
-                ),
-                child: Align(
-                  alignment: AlignmentDirectional(0.0, 0.0),
-                  child: Padding(
-                    padding: EdgeInsets.all(8.0),
-                    child: Text(
-                      'D',
-                      style: FlutterFlowTheme.of(context).titleMedium.override(
-                            fontFamily:
-                                FlutterFlowTheme.of(context).titleMediumFamily,
-                            color: Colors.white,
-                            letterSpacing: 0.0,
-                            fontWeight: FontWeight.w500,
-                            useGoogleFonts: !FlutterFlowTheme.of(context)
-                                .titleMediumIsCustom,
-                          ),
+          Flexible(
+            flex: 1,
+            child: Row(
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                Container(
+                  width: 40.0,
+                  height: 40.0,
+                  decoration: BoxDecoration(
+                    color: Color(0xFF006B08),
+                    shape: BoxShape.circle,
+                  ),
+                  child: Align(
+                    alignment: AlignmentDirectional(0.0, 0.0),
+                    child: Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: Text(
+                        'D',
+                        style:
+                            FlutterFlowTheme.of(context).titleMedium.override(
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .titleMediumFamily,
+                                  color: Colors.white,
+                                  letterSpacing: 0.0,
+                                  fontWeight: FontWeight.w500,
+                                  useGoogleFonts: !FlutterFlowTheme.of(context)
+                                      .titleMediumIsCustom,
+                                ),
+                      ),
                     ),
                   ),
                 ),
-              ),
-              Column(
-                mainAxisSize: MainAxisSize.max,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Daisy Thomas',
-                    style: FlutterFlowTheme.of(context).titleLarge.override(
-                          fontFamily:
-                              FlutterFlowTheme.of(context).titleLargeFamily,
-                          color: FlutterFlowTheme.of(context).b1,
-                          letterSpacing: 0.0,
-                          fontWeight: FontWeight.bold,
-                          useGoogleFonts:
-                              !FlutterFlowTheme.of(context).titleLargeIsCustom,
-                        ),
-                  ),
-                  Row(
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 12.0, 0.0),
+                  child: Column(
                     mainAxisSize: MainAxisSize.max,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Secunderabad, Telangana 500003',
-                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                        'Daisy Thomas',
+                        style: FlutterFlowTheme.of(context).titleLarge.override(
                               fontFamily:
-                                  FlutterFlowTheme.of(context).bodyMediumFamily,
-                              color: Color(0xFF848282),
-                              fontSize: 14.0,
+                                  FlutterFlowTheme.of(context).titleLargeFamily,
+                              color: FlutterFlowTheme.of(context).b1,
                               letterSpacing: 0.0,
+                              fontWeight: FontWeight.bold,
                               useGoogleFonts: !FlutterFlowTheme.of(context)
-                                  .bodyMediumIsCustom,
+                                  .titleLargeIsCustom,
                             ),
                       ),
-                      Icon(
-                        Icons.keyboard_arrow_down,
-                        color: Color(0xFF848282),
-                        size: 16.0,
+                      Row(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Text(
+                            'Secunderabad, Telangana 500003',
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .bodyMediumFamily,
+                                  color: Color(0xFF848282),
+                                  fontSize: 14.0,
+                                  letterSpacing: 0.0,
+                                  useGoogleFonts: !FlutterFlowTheme.of(context)
+                                      .bodyMediumIsCustom,
+                                ),
+                          ),
+                          Icon(
+                            Icons.keyboard_arrow_down,
+                            color: Color(0xFF848282),
+                            size: 16.0,
+                          ),
+                        ].divide(SizedBox(width: 4.0)),
                       ),
-                    ].divide(SizedBox(width: 4.0)),
+                    ],
                   ),
-                ],
-              ),
-            ].divide(SizedBox(width: 12.0)),
+                ),
+              ].divide(SizedBox(width: 12.0)),
+            ),
           ),
           Container(
             width: 32.0,

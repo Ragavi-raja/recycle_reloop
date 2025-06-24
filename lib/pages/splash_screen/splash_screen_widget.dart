@@ -89,12 +89,15 @@ class _SplashScreenWidgetState extends State<SplashScreenWidget> {
                       Text(
                         'Welcome to',
                         textAlign: TextAlign.center,
-                        style: FlutterFlowTheme.of(context).titleLarge.override(
+                        style: FlutterFlowTheme.of(context).labelLarge.override(
                               fontFamily:
-                                  FlutterFlowTheme.of(context).titleLargeFamily,
+                                  FlutterFlowTheme.of(context).labelLargeFamily,
+                              color: FlutterFlowTheme.of(context).b1,
+                              fontSize: 20.0,
                               letterSpacing: 0.0,
+                              fontWeight: FontWeight.bold,
                               useGoogleFonts: !FlutterFlowTheme.of(context)
-                                  .titleLargeIsCustom,
+                                  .labelLargeIsCustom,
                             ),
                       ),
                     if (responsiveVisibility(
@@ -120,7 +123,9 @@ class _SplashScreenWidgetState extends State<SplashScreenWidget> {
                           FlutterFlowTheme.of(context).headlineSmall.override(
                                 fontFamily: FlutterFlowTheme.of(context)
                                     .headlineSmallFamily,
+                                color: FlutterFlowTheme.of(context).c1,
                                 letterSpacing: 0.0,
+                                fontWeight: FontWeight.bold,
                                 useGoogleFonts: !FlutterFlowTheme.of(context)
                                     .headlineSmallIsCustom,
                               ),

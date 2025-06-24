@@ -55,14 +55,18 @@ class _Into1WidgetState extends State<Into1Widget> {
             alignment: AlignmentDirectional(0.0, -1.0),
             child: Stack(
               children: [
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(8.0),
-                  child: Image.asset(
-                    'assets/images/Group_2609093.png',
-                    width: double.infinity,
-                    height: 480.0,
-                    fit: BoxFit.fill,
-                  ),
+                Stack(
+                  children: [
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(8.0),
+                      child: Image.asset(
+                        'assets/images/Group_2609093.png',
+                        width: double.infinity,
+                        height: 480.0,
+                        fit: BoxFit.fill,
+                      ),
+                    ),
+                  ],
                 ),
                 Align(
                   alignment: AlignmentDirectional(0.0, 0.0),
@@ -175,7 +179,16 @@ class _Into1WidgetState extends State<Into1Widget> {
                                 hoverColor: Colors.transparent,
                                 highlightColor: Colors.transparent,
                                 onTap: () async {
-                                  context.pushNamed(Into1CopyWidget.routeName);
+                                  context.goNamed(
+                                    Into1CopyWidget.routeName,
+                                    extra: <String, dynamic>{
+                                      kTransitionInfoKey: TransitionInfo(
+                                        hasTransition: true,
+                                        transitionType: PageTransitionType.fade,
+                                        duration: Duration(milliseconds: 0),
+                                      ),
+                                    },
+                                  );
                                 },
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(8.0),

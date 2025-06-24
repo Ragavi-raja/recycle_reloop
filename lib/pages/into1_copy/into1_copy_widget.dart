@@ -55,14 +55,18 @@ class _Into1CopyWidgetState extends State<Into1CopyWidget> {
             alignment: AlignmentDirectional(0.0, -1.0),
             child: Stack(
               children: [
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(8.0),
-                  child: Image.asset(
-                    'assets/images/Group_2609092.png',
-                    width: double.infinity,
-                    height: 480.0,
-                    fit: BoxFit.fill,
-                  ),
+                Stack(
+                  children: [
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(8.0),
+                      child: Image.asset(
+                        'assets/images/Group_2609092.png',
+                        width: double.infinity,
+                        height: 480.0,
+                        fit: BoxFit.fill,
+                      ),
+                    ),
+                  ],
                 ),
                 Align(
                   alignment: AlignmentDirectional(0.0, 0.0),
@@ -76,7 +80,7 @@ class _Into1CopyWidgetState extends State<Into1CopyWidget> {
                       children: [
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
-                              41.0, 32.0, 41.0, 12.0),
+                              0.0, 32.0, 0.0, 12.0),
                           child: Text(
                             'Orchestrating Sustainability Across Every Frontier',
                             textAlign: TextAlign.center,
@@ -99,7 +103,7 @@ class _Into1CopyWidgetState extends State<Into1CopyWidget> {
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 12.0),
                             child: Text(
-                              'We don’t just recycle; We craft melodies of \n change that resonate for\n generations to come',
+                              'We don’t just recycle; We craft melodies \nof change that resonate for \ngenerations to come',
                               textAlign: TextAlign.center,
                               style: FlutterFlowTheme.of(context)
                                   .labelMedium
@@ -175,8 +179,16 @@ class _Into1CopyWidgetState extends State<Into1CopyWidget> {
                                 hoverColor: Colors.transparent,
                                 highlightColor: Colors.transparent,
                                 onTap: () async {
-                                  context
-                                      .pushNamed(Into1CopyCopyWidget.routeName);
+                                  context.goNamed(
+                                    Into1CopyCopyWidget.routeName,
+                                    extra: <String, dynamic>{
+                                      kTransitionInfoKey: TransitionInfo(
+                                        hasTransition: true,
+                                        transitionType: PageTransitionType.fade,
+                                        duration: Duration(milliseconds: 0),
+                                      ),
+                                    },
+                                  );
                                 },
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(8.0),

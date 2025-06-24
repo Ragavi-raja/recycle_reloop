@@ -1,5 +1,6 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'signup_sucess_model.dart';
 export 'signup_sucess_model.dart';
@@ -39,16 +40,16 @@ class _SignupSucessWidgetState extends State<SignupSucessWidget> {
       padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
       child: Container(
         width: 366.0,
-        height: 241.0,
+        height: 220.0,
         decoration: BoxDecoration(
-          color: Color(0x00FFFFFF),
+          color: FlutterFlowTheme.of(context).customColor4,
           borderRadius: BorderRadius.circular(16.0),
           shape: BoxShape.rectangle,
         ),
         child: Padding(
-          padding: EdgeInsetsDirectional.fromSTEB(25.0, 40.0, 25.0, 40.0),
+          padding: EdgeInsetsDirectional.fromSTEB(25.0, 40.0, 25.0, 0.0),
           child: Column(
-            mainAxisSize: MainAxisSize.max,
+            mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Container(
@@ -130,20 +131,30 @@ class _SignupSucessWidgetState extends State<SignupSucessWidget> {
                                       .labelSmallIsCustom,
                                 ),
                           ),
-                          Text(
-                            'RELOOP',
-                            style: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  fontFamily: FlutterFlowTheme.of(context)
-                                      .bodyMediumFamily,
-                                  color: Color(0x00243D83),
-                                  fontSize: 14.0,
-                                  letterSpacing: 0.0,
-                                  fontWeight: FontWeight.bold,
-                                  useGoogleFonts: !FlutterFlowTheme.of(context)
-                                      .bodyMediumIsCustom,
-                                ),
+                          InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              context.goNamed(HomePageWidget.routeName);
+                            },
+                            child: Text(
+                              'RELOOP',
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .bodyMediumFamily,
+                                    color: FlutterFlowTheme.of(context).c8,
+                                    fontSize: 14.0,
+                                    letterSpacing: 0.0,
+                                    fontWeight: FontWeight.bold,
+                                    useGoogleFonts:
+                                        !FlutterFlowTheme.of(context)
+                                            .bodyMediumIsCustom,
+                                  ),
+                            ),
                           ),
                           Text(
                             'Now!',

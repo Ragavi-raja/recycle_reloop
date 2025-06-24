@@ -21,7 +21,6 @@ class LoginInputCall {
       callType: ApiCallType.POST,
       headers: {
         'Content-Type': 'application/json',
-        'Content-Length': '27',
       },
       params: {},
       body: ffApiRequestBody,
