@@ -20,8 +20,12 @@ class FFDevEnvironmentValues {
       final String response =
           await rootBundle.loadString(environmentValuesPath);
       final data = await json.decode(response);
+      _apiurl = data['apiurl'];
     } catch (e) {
       print('Error loading environment values: $e');
     }
   }
+
+  String _apiurl = '';
+  String get apiurl => _apiurl;
 }

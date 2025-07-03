@@ -13,3 +13,8 @@ export '/pages/signupscreen/signupscreen_widget.dart' show SignupscreenWidget;
 export '/pages/o_t_p_screen/o_t_p_screen_widget.dart' show OTPScreenWidget;
 export '/pages/home_page/home_page_widget.dart' show HomePageWidget;
 export '/pages/newlocation/newlocation_widget.dart' show NewlocationWidget;
+export '/pages/scrapsuccess/scrapsuccess_widget.dart' show ScrapsuccessWidget;
+export '/profilepage_parent/profilepage_parent_widget.dart'
+    show ProfilepageParentWidget;
+export '/profile_bonus/profile_bonus_widget.dart' show ProfileBonusWidget;
+export '/profile_update/profile_update_widget.dart' show ProfileUpdateWidget;

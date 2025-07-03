@@ -33,12 +33,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       navigatorKey: appNavigatorKey,
-      errorBuilder: (context, state) => SplashScreenWidget(),
+      errorBuilder: (context, state) => LoginWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
-          builder: (context, _) => SplashScreenWidget(),
+          builder: (context, _) => LoginWidget(),
         ),
         FFRoute(
           name: SplashScreenWidget.routeName,
@@ -99,6 +99,26 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: NewlocationWidget.routeName,
           path: NewlocationWidget.routePath,
           builder: (context, params) => NewlocationWidget(),
+        ),
+        FFRoute(
+          name: ScrapsuccessWidget.routeName,
+          path: ScrapsuccessWidget.routePath,
+          builder: (context, params) => ScrapsuccessWidget(),
+        ),
+        FFRoute(
+          name: ProfilepageParentWidget.routeName,
+          path: ProfilepageParentWidget.routePath,
+          builder: (context, params) => ProfilepageParentWidget(),
+        ),
+        FFRoute(
+          name: ProfileBonusWidget.routeName,
+          path: ProfileBonusWidget.routePath,
+          builder: (context, params) => ProfileBonusWidget(),
+        ),
+        FFRoute(
+          name: ProfileUpdateWidget.routeName,
+          path: ProfileUpdateWidget.routePath,
+          builder: (context, params) => ProfileUpdateWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

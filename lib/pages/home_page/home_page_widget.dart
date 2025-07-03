@@ -61,10 +61,20 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                       child: Padding(
                         padding:
                             EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
-                        child: wrapWithModel(
-                          model: _model.profileComponentModel,
-                          updateCallback: () => safeSetState(() {}),
-                          child: ProfileComponentWidget(),
+                        child: InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
+                          onTap: () async {
+                            context
+                                .pushNamed(ProfilepageParentWidget.routeName);
+                          },
+                          child: wrapWithModel(
+                            model: _model.profileComponentModel,
+                            updateCallback: () => safeSetState(() {}),
+                            child: ProfileComponentWidget(),
+                          ),
                         ),
                       ),
                     ),
@@ -714,7 +724,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                           hoverColor: Colors.transparent,
                           highlightColor: Colors.transparent,
                           onTap: () async {
-                            context.pushNamed(
+                            context.goNamed(
                               Selscrapimage1Widget.routeName,
                               queryParameters: {
                                 'pageName': serializeParam(
@@ -770,7 +780,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                           hoverColor: Colors.transparent,
                           highlightColor: Colors.transparent,
                           onTap: () async {
-                            context.pushNamed(
+                            context.goNamed(
                               Selscrapimage1Widget.routeName,
                               queryParameters: {
                                 'pageName': serializeParam(
@@ -887,44 +897,53 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                             ],
                           ),
                         ),
-                        Column(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Container(
-                              width: 72.0,
-                              height: 72.0,
-                              decoration: BoxDecoration(
-                                color: Color(0xFFEBF9F8),
-                                shape: BoxShape.circle,
-                              ),
-                              child: Align(
-                                alignment: AlignmentDirectional(0.0, 0.0),
-                                child: Image.asset(
-                                  'assets/images/Design_1h2_(1).png',
-                                  width: 40.0,
-                                  height: 40.0,
-                                  fit: BoxFit.contain,
+                        InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
+                          onTap: () async {
+                            context.pushNamed(CertificatepageWidget.routeName);
+                          },
+                          child: Column(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Container(
+                                width: 72.0,
+                                height: 72.0,
+                                decoration: BoxDecoration(
+                                  color: Color(0xFFEBF9F8),
+                                  shape: BoxShape.circle,
+                                ),
+                                child: Align(
+                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  child: Image.asset(
+                                    'assets/images/Design_1h2_(1).png',
+                                    width: 40.0,
+                                    height: 40.0,
+                                    fit: BoxFit.contain,
+                                  ),
                                 ),
                               ),
-                            ),
-                            Text(
-                              'My Certificate',
-                              textAlign: TextAlign.center,
-                              style: FlutterFlowTheme.of(context)
-                                  .bodySmall
-                                  .override(
-                                    fontFamily: FlutterFlowTheme.of(context)
-                                        .bodySmallFamily,
-                                    fontSize: 12.0,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w500,
-                                    useGoogleFonts:
-                                        !FlutterFlowTheme.of(context)
-                                            .bodySmallIsCustom,
-                                  ),
-                            ),
-                          ],
+                              Text(
+                                'My Certificate',
+                                textAlign: TextAlign.center,
+                                style: FlutterFlowTheme.of(context)
+                                    .bodySmall
+                                    .override(
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .bodySmallFamily,
+                                      fontSize: 12.0,
+                                      letterSpacing: 0.0,
+                                      fontWeight: FontWeight.w500,
+                                      useGoogleFonts:
+                                          !FlutterFlowTheme.of(context)
+                                              .bodySmallIsCustom,
+                                    ),
+                              ),
+                            ],
+                          ),
                         ),
                         Column(
                           mainAxisSize: MainAxisSize.max,

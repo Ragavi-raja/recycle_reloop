@@ -1,6 +1,7 @@
 import '/backend/api_requests/api_calls.dart';
 import '/components/maplocation_widget.dart';
 import '/components/moreaddress_widget.dart';
+import '/components/scrapscreen2_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -177,12 +178,41 @@ class _NewlocationWidgetState extends State<NewlocationWidget> {
                                       ),
                                     ),
                                   ),
-                                  Text(
-                                    'Change',
-                                    style: TextStyle(
-                                      fontFamily: ' Neue Haas Grotesk Text Pro',
-                                      color: FlutterFlowTheme.of(context).c3,
-                                      fontSize: 14.0,
+                                  InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      await showModalBottomSheet(
+                                        isScrollControlled: true,
+                                        backgroundColor: Colors.transparent,
+                                        enableDrag: false,
+                                        context: context,
+                                        builder: (context) {
+                                          return GestureDetector(
+                                            onTap: () {
+                                              FocusScope.of(context).unfocus();
+                                              FocusManager.instance.primaryFocus
+                                                  ?.unfocus();
+                                            },
+                                            child: Padding(
+                                              padding: MediaQuery.viewInsetsOf(
+                                                  context),
+                                              child: Scrapscreen2Widget(),
+                                            ),
+                                          );
+                                        },
+                                      ).then((value) => safeSetState(() {}));
+                                    },
+                                    child: Text(
+                                      'Change',
+                                      style: TextStyle(
+                                        fontFamily:
+                                            ' Neue Haas Grotesk Text Pro',
+                                        color: FlutterFlowTheme.of(context).c3,
+                                        fontSize: 14.0,
+                                      ),
                                     ),
                                   ),
                                 ],

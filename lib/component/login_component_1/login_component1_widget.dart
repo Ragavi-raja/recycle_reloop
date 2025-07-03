@@ -283,39 +283,31 @@ class _LoginComponent1WidgetState extends State<LoginComponent1Widget> {
                   final buttonLoginInputResponse = snapshot.data!;
 
                   return FFButtonWidget(
-                    onPressed: (_model.loginMobileNumberTextController.text != '')
-                        ? null
-                        : () async {
-                            _model.logininputResponse =
-                                await LoginInputCall.call(
-                              number:
-                                  _model.loginMobileNumberTextController.text,
-                            );
+                    onPressed: () async {
+                      _model.logininputResponse = await LoginInputCall.call(
+                        number: _model.loginMobileNumberTextController.text,
+                      );
 
-                            if ((_model.logininputResponse?.succeeded ??
-                                true)) {
-                              context.pushNamed(OTPScreenWidget.routeName);
-                            } else {
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                SnackBar(
-                                  content: Text(
-                                    (_model.logininputResponse
-                                            ?.exceptionMessage ??
-                                        ''),
-                                    style: TextStyle(
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
-                                    ),
-                                  ),
-                                  duration: Duration(milliseconds: 4000),
-                                  backgroundColor:
-                                      FlutterFlowTheme.of(context).secondary,
-                                ),
-                              );
-                            }
+                      if ((_model.logininputResponse?.succeeded ?? true)) {
+                        context.pushNamed(OTPScreenWidget.routeName);
+                      } else {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text(
+                              buttonLoginInputResponse.bodyText,
+                              style: TextStyle(
+                                color: FlutterFlowTheme.of(context).primaryText,
+                              ),
+                            ),
+                            duration: Duration(milliseconds: 4000),
+                            backgroundColor:
+                                FlutterFlowTheme.of(context).secondary,
+                          ),
+                        );
+                      }
 
-                            safeSetState(() {});
-                          },
+                      safeSetState(() {});
+                    },
                     text: 'Login',
                     options: FFButtonOptions(
                       width: double.infinity,
@@ -344,8 +336,6 @@ class _LoginComponent1WidgetState extends State<LoginComponent1Widget> {
                         width: 1.0,
                       ),
                       borderRadius: BorderRadius.circular(8.0),
-                      disabledColor: FlutterFlowTheme.of(context).customColor4,
-                      disabledTextColor: FlutterFlowTheme.of(context).secondary,
                     ),
                   );
                 },
