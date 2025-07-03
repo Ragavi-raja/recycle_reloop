@@ -289,7 +289,7 @@ class _LoginComponent1WidgetState extends State<LoginComponent1Widget> {
                       );
 
                       if ((_model.logininputResponse?.succeeded ?? true)) {
-                        context.pushNamed(OTPScreenWidget.routeName);
+                        context.goNamed(OTPScreenWidget.routeName);
                       } else {
                         ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(
