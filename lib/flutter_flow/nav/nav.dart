@@ -88,7 +88,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: OTPScreenWidget.routeName,
           path: OTPScreenWidget.routePath,
-          builder: (context, params) => OTPScreenWidget(),
+          builder: (context, params) => OTPScreenWidget(
+            mobile: params.getParam('mobile', ParamType.String),
+          ),
         ),
         FFRoute(
           name: HomePageWidget.routeName,
