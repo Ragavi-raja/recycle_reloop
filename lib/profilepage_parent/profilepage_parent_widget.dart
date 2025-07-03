@@ -290,6 +290,7 @@ class _ProfilepageParentWidgetState extends State<ProfilepageParentWidget> {
                         },
                         child: Container(
                           width: double.infinity,
+                          height: 56.0,
                           decoration: BoxDecoration(
                             color: Color(0xFFFAF9F9),
                             borderRadius: BorderRadius.circular(12.0),
@@ -343,36 +344,41 @@ class _ProfilepageParentWidgetState extends State<ProfilepageParentWidget> {
                                   ].divide(SizedBox(width: 12.0)),
                                 ),
                                 Row(
-                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisSize: MainAxisSize.min,
                                   children: [
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          8.0, 4.0, 8.0, 4.0),
-                                      child: Container(
-                                        decoration: BoxDecoration(
-                                          color: Color(0xFFD1EEE3),
-                                          borderRadius:
-                                              BorderRadius.circular(12.0),
-                                        ),
-                                        child: Padding(
-                                          padding: EdgeInsets.all(8.0),
-                                          child: Text(
-                                            '80% Completed',
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodySmall
-                                                .override(
-                                                  fontFamily:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodySmallFamily,
-                                                  color: Color(0xFF62BB46),
-                                                  letterSpacing: 0.0,
-                                                  fontWeight: FontWeight.w500,
-                                                  useGoogleFonts:
-                                                      !FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodySmallIsCustom,
-                                                ),
+                                    Expanded(
+                                      child: Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            8.0, 4.0, 8.0, 4.0),
+                                        child: Container(
+                                          decoration: BoxDecoration(
+                                            color: Color(0xFFD1EEE3),
+                                            borderRadius:
+                                                BorderRadius.circular(12.0),
+                                          ),
+                                          child: Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    2.0, 0.0, 2.0, 0.0),
+                                            child: Text(
+                                              '80% Completed',
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .bodySmall
+                                                  .override(
+                                                    fontFamily:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodySmallFamily,
+                                                    color: Color(0xFF62BB46),
+                                                    letterSpacing: 0.0,
+                                                    fontWeight: FontWeight.w500,
+                                                    useGoogleFonts:
+                                                        !FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodySmallIsCustom,
+                                                  ),
+                                            ),
                                           ),
                                         ),
                                       ),
@@ -395,6 +401,7 @@ class _ProfilepageParentWidgetState extends State<ProfilepageParentWidget> {
                           EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                       child: Container(
                         width: double.infinity,
+                        height: 56.0,
                         decoration: BoxDecoration(
                           color: Color(0xFFFAF9F9),
                           borderRadius: BorderRadius.circular(12.0),
@@ -461,6 +468,7 @@ class _ProfilepageParentWidgetState extends State<ProfilepageParentWidget> {
                           EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                       child: Container(
                         width: double.infinity,
+                        height: 56.0,
                         decoration: BoxDecoration(
                           color: Color(0xFFFAF9F9),
                           borderRadius: BorderRadius.circular(12.0),
@@ -527,6 +535,7 @@ class _ProfilepageParentWidgetState extends State<ProfilepageParentWidget> {
                           EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                       child: Container(
                         width: double.infinity,
+                        height: 56.0,
                         decoration: BoxDecoration(
                           color: Color(0xFFFAF9F9),
                           borderRadius: BorderRadius.circular(12.0),
@@ -593,6 +602,7 @@ class _ProfilepageParentWidgetState extends State<ProfilepageParentWidget> {
                           EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                       child: Container(
                         width: double.infinity,
+                        height: 56.0,
                         decoration: BoxDecoration(
                           color: Color(0xFFFAF9F9),
                           borderRadius: BorderRadius.circular(12.0),
@@ -651,6 +661,7 @@ class _ProfilepageParentWidgetState extends State<ProfilepageParentWidget> {
                           EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                       child: Container(
                         width: double.infinity,
+                        height: 56.0,
                         decoration: BoxDecoration(
                           color: Color(0xFFFAF9F9),
                           borderRadius: BorderRadius.circular(12.0),
@@ -710,34 +721,50 @@ class _ProfilepageParentWidgetState extends State<ProfilepageParentWidget> {
                                     color: Color(0xFFD1EEE3),
                                     borderRadius: BorderRadius.circular(12.0),
                                   ),
-                                  child: Padding(
-                                    padding: EdgeInsets.all(12.0),
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: [
-                                        Icon(
-                                          Icons.star,
-                                          color: Color(0xFF62BB46),
-                                          size: 16.0,
-                                        ),
-                                        Text(
-                                          '4',
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodySmall
-                                              .override(
-                                                fontFamily:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodySmallFamily,
-                                                color: Color(0xFF1C1C1C),
-                                                letterSpacing: 0.0,
-                                                fontWeight: FontWeight.w500,
-                                                useGoogleFonts:
-                                                    !FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodySmallIsCustom,
+                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  child: Align(
+                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    child: Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          2.0, 0.0, 2.0, 0.0),
+                                      child: Row(
+                                        mainAxisSize: MainAxisSize.min,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.center,
+                                        children: [
+                                          Expanded(
+                                            child: Align(
+                                              alignment: AlignmentDirectional(
+                                                  0.0, -1.0),
+                                              child: Icon(
+                                                Icons.star,
+                                                color: Color(0xFF62BB46),
+                                                size: 16.0,
                                               ),
-                                        ),
-                                      ].divide(SizedBox(width: 4.0)),
+                                            ),
+                                          ),
+                                          Text(
+                                            '4',
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodySmall
+                                                .override(
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodySmallFamily,
+                                                  color: Color(0xFF1C1C1C),
+                                                  letterSpacing: 0.0,
+                                                  fontWeight: FontWeight.w500,
+                                                  useGoogleFonts:
+                                                      !FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodySmallIsCustom,
+                                                ),
+                                          ),
+                                        ],
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -752,6 +779,7 @@ class _ProfilepageParentWidgetState extends State<ProfilepageParentWidget> {
                           EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                       child: Container(
                         width: double.infinity,
+                        height: 56.0,
                         decoration: BoxDecoration(
                           color: Color(0xFFFAF9F9),
                           borderRadius: BorderRadius.circular(12.0),
