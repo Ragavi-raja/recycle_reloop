@@ -44,14 +44,14 @@ class _ProfilepageParentWidgetState extends State<ProfilepageParentWidget> {
       },
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: Color(0xFFFAF9F9),
+        backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
         body: SafeArea(
           top: true,
           child: Padding(
             padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
             child: Column(
               mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Align(
@@ -65,15 +65,24 @@ class _ProfilepageParentWidgetState extends State<ProfilepageParentWidget> {
                 Align(
                   alignment: AlignmentDirectional(-1.0, 0.0),
                   child: Row(
-                    mainAxisSize: MainAxisSize.max,
+                    mainAxisSize: MainAxisSize.min,
                     children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(8.0),
-                        child: Image.asset(
-                          'assets/images/arrow-left-02-round.png',
-                          width: 32.0,
-                          height: 32.0,
-                          fit: BoxFit.contain,
+                      InkWell(
+                        splashColor: Colors.transparent,
+                        focusColor: Colors.transparent,
+                        hoverColor: Colors.transparent,
+                        highlightColor: Colors.transparent,
+                        onTap: () async {
+                          context.safePop();
+                        },
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(8.0),
+                          child: Image.asset(
+                            'assets/images/arrow-left-02-round.png',
+                            width: 32.0,
+                            height: 32.0,
+                            fit: BoxFit.contain,
+                          ),
                         ),
                       ),
                       Text(
@@ -275,7 +284,7 @@ class _ProfilepageParentWidgetState extends State<ProfilepageParentWidget> {
                   ),
                 ),
                 Column(
-                  mainAxisSize: MainAxisSize.max,
+                  mainAxisSize: MainAxisSize.min,
                   children: [
                     Padding(
                       padding:
@@ -292,7 +301,7 @@ class _ProfilepageParentWidgetState extends State<ProfilepageParentWidget> {
                           width: double.infinity,
                           height: 56.0,
                           decoration: BoxDecoration(
-                            color: Color(0xFFFAF9F9),
+                            color: FlutterFlowTheme.of(context).customColor1,
                             borderRadius: BorderRadius.circular(12.0),
                             border: Border.all(
                               color: Color(0xFFE0E0E0),
@@ -403,7 +412,7 @@ class _ProfilepageParentWidgetState extends State<ProfilepageParentWidget> {
                         width: double.infinity,
                         height: 56.0,
                         decoration: BoxDecoration(
-                          color: Color(0xFFFAF9F9),
+                          color: FlutterFlowTheme.of(context).customColor1,
                           borderRadius: BorderRadius.circular(12.0),
                           border: Border.all(
                             color: Color(0xFFE0E0E0),
@@ -470,7 +479,7 @@ class _ProfilepageParentWidgetState extends State<ProfilepageParentWidget> {
                         width: double.infinity,
                         height: 56.0,
                         decoration: BoxDecoration(
-                          color: Color(0xFFFAF9F9),
+                          color: FlutterFlowTheme.of(context).customColor1,
                           borderRadius: BorderRadius.circular(12.0),
                           border: Border.all(
                             color: Color(0xFFE0E0E0),

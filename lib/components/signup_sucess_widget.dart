@@ -36,23 +36,23 @@ class _SignupSucessWidgetState extends State<SignupSucessWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: SingleChildScrollView(
-        padding: EdgeInsets.all(24.0),
-        child: ConstrainedBox(
-          constraints: BoxConstraints(
-            maxWidth: 350,
-            minWidth: 200,
-            maxHeight: MediaQuery.of(context).size.height * 0.8,
+    return Align(
+      alignment: AlignmentDirectional(0.0, 0.0),
+      child: Padding(
+        padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+        child: Container(
+          width: 366.0,
+          height: 220.0,
+          decoration: BoxDecoration(
+            color: FlutterFlowTheme.of(context).customColor4,
+            borderRadius: BorderRadius.circular(16.0),
+            shape: BoxShape.rectangle,
           ),
-          child: Material(
-            color: Colors.transparent,
-            child: Container(
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(16.0),
-              ),
-              padding: EdgeInsets.all(24.0),
+          alignment: AlignmentDirectional(0.0, 0.0),
+          child: Align(
+            alignment: AlignmentDirectional(0.0, 0.0),
+            child: Padding(
+              padding: EdgeInsetsDirectional.fromSTEB(25.0, 0.0, 25.0, 0.0),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.center,

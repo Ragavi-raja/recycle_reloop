@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '/main.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 
 import '/index.dart';
@@ -51,10 +52,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => LoginWidget(),
         ),
         FFRoute(
-          name: CertificatepageWidget.routeName,
-          path: CertificatepageWidget.routePath,
-          builder: (context, params) => CertificatepageWidget(),
-        ),
+            name: CertificatepageWidget.routeName,
+            path: CertificatepageWidget.routePath,
+            builder: (context, params) => params.isEmpty
+                ? NavBarPage(initialPage: 'certificatepage')
+                : NavBarPage(
+                    initialPage: 'certificatepage',
+                    page: CertificatepageWidget(),
+                  )),
         FFRoute(
           name: Selscrapimage1Widget.routeName,
           path: Selscrapimage1Widget.routePath,
@@ -88,14 +93,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: OTPScreenWidget.routeName,
           path: OTPScreenWidget.routePath,
-          builder: (context, params) => OTPScreenWidget(
-            mobile: params.getParam('mobile', ParamType.String),
-          ),
+          builder: (context, params) => OTPScreenWidget(),
         ),
         FFRoute(
           name: HomePageWidget.routeName,
           path: HomePageWidget.routePath,
-          builder: (context, params) => HomePageWidget(),
+          builder: (context, params) => params.isEmpty
+              ? NavBarPage(initialPage: 'homePage')
+              : HomePageWidget(),
         ),
         FFRoute(
           name: NewlocationWidget.routeName,
@@ -121,7 +126,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: ProfileUpdateWidget.routeName,
           path: ProfileUpdateWidget.routePath,
           builder: (context, params) => ProfileUpdateWidget(),
-        )
+        ),
+        FFRoute(
+            name: SellscrapWidget.routeName,
+            path: SellscrapWidget.routePath,
+            builder: (context, params) => params.isEmpty
+                ? NavBarPage(initialPage: 'sellscrap')
+                : NavBarPage(
+                    initialPage: 'sellscrap',
+                    page: SellscrapWidget(),
+                  ))
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
 

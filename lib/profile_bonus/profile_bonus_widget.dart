@@ -43,7 +43,7 @@ class _ProfileBonusWidgetState extends State<ProfileBonusWidget> {
       },
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: Colors.white,
+        backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
         appBar: AppBar(
           backgroundColor: Colors.white,
           automaticallyImplyLeading: false,
@@ -83,48 +83,68 @@ class _ProfileBonusWidgetState extends State<ProfileBonusWidget> {
                 mainAxisSize: MainAxisSize.max,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Padding(
-                    padding: EdgeInsets.all(24.0),
-                    child: Container(
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                        color: Color(0xFF004000),
-                        borderRadius: BorderRadius.circular(16.0),
-                      ),
-                      child: Padding(
-                        padding: EdgeInsets.all(12.0),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Column(
+                  Container(
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      color: Color(0xFF004000),
+                      borderRadius: BorderRadius.circular(16.0),
+                    ),
+                    child: Padding(
+                      padding: EdgeInsets.all(12.0),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Column(
+                            mainAxisSize: MainAxisSize.max,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Stage 1',
+                                style: FlutterFlowTheme.of(context)
+                                    .titleMedium
+                                    .override(
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .titleMediumFamily,
+                                      color: Colors.white,
+                                      letterSpacing: 0.0,
+                                      fontWeight: FontWeight.w500,
+                                      useGoogleFonts:
+                                          !FlutterFlowTheme.of(context)
+                                              .titleMediumIsCustom,
+                                    ),
+                              ),
+                              Text(
+                                'Entry level',
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .bodyMediumFamily,
+                                      color: Color(0xFFFAF9F9),
+                                      fontSize: 14.0,
+                                      letterSpacing: 0.0,
+                                      useGoogleFonts:
+                                          !FlutterFlowTheme.of(context)
+                                              .bodyMediumIsCustom,
+                                    ),
+                              ),
+                            ].divide(SizedBox(height: 4.0)),
+                          ),
+                          Expanded(
+                            child: Column(
                               mainAxisSize: MainAxisSize.max,
-                              crossAxisAlignment: CrossAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.end,
                               children: [
                                 Text(
-                                  'Stage 1',
-                                  style: FlutterFlowTheme.of(context)
-                                      .titleMedium
-                                      .override(
-                                        fontFamily: FlutterFlowTheme.of(context)
-                                            .titleMediumFamily,
-                                        color: Colors.white,
-                                        letterSpacing: 0.0,
-                                        fontWeight: FontWeight.w500,
-                                        useGoogleFonts:
-                                            !FlutterFlowTheme.of(context)
-                                                .titleMediumIsCustom,
-                                      ),
-                                ),
-                                Text(
-                                  'Entry level',
+                                  '70/350 Points Collected',
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
                                         fontFamily: FlutterFlowTheme.of(context)
                                             .bodyMediumFamily,
-                                        color: Color(0xFFFAF9F9),
+                                        color: Colors.white,
                                         fontSize: 14.0,
                                         letterSpacing: 0.0,
                                         useGoogleFonts:
@@ -132,72 +152,46 @@ class _ProfileBonusWidgetState extends State<ProfileBonusWidget> {
                                                 .bodyMediumIsCustom,
                                       ),
                                 ),
-                              ].divide(SizedBox(height: 4.0)),
-                            ),
-                            Expanded(
-                              child: Column(
-                                mainAxisSize: MainAxisSize.max,
-                                crossAxisAlignment: CrossAxisAlignment.end,
-                                children: [
-                                  Text(
-                                    '70/350 Points Collected',
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMediumFamily,
-                                          color: Colors.white,
-                                          fontSize: 14.0,
-                                          letterSpacing: 0.0,
-                                          useGoogleFonts:
-                                              !FlutterFlowTheme.of(context)
-                                                  .bodyMediumIsCustom,
-                                        ),
+                                Container(
+                                  width: 198.0,
+                                  height: 10.0,
+                                  decoration: BoxDecoration(
+                                    color: Color(0xFFFAF9F9),
+                                    borderRadius: BorderRadius.circular(5.0),
                                   ),
-                                  Container(
-                                    width: 198.0,
+                                  child: Container(
+                                    width: 40.0,
                                     height: 10.0,
                                     decoration: BoxDecoration(
-                                      color: Color(0xFFFAF9F9),
+                                      color: Color(0xFF00FF00),
                                       borderRadius: BorderRadius.circular(5.0),
                                     ),
-                                    child: Container(
-                                      width: 40.0,
-                                      height: 10.0,
-                                      decoration: BoxDecoration(
-                                        color: Color(0xFF00FF00),
-                                        borderRadius:
-                                            BorderRadius.circular(5.0),
+                                  ),
+                                ),
+                                Text(
+                                  'Donate 200 Scrap to go for next level',
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodySmall
+                                      .override(
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .bodySmallFamily,
+                                        color: Colors.white,
+                                        fontSize: 12.0,
+                                        letterSpacing: 0.0,
+                                        useGoogleFonts:
+                                            !FlutterFlowTheme.of(context)
+                                                .bodySmallIsCustom,
                                       ),
-                                    ),
-                                  ),
-                                  Text(
-                                    'Donate 200 Scrap to go for next level',
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodySmall
-                                        .override(
-                                          fontFamily:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodySmallFamily,
-                                          color: Colors.white,
-                                          fontSize: 12.0,
-                                          letterSpacing: 0.0,
-                                          useGoogleFonts:
-                                              !FlutterFlowTheme.of(context)
-                                                  .bodySmallIsCustom,
-                                        ),
-                                  ),
-                                ].divide(SizedBox(height: 8.0)),
-                              ),
+                                ),
+                              ].divide(SizedBox(height: 8.0)),
                             ),
-                            Icon(
-                              Icons.keyboard_arrow_down,
-                              color: Colors.white,
-                              size: 24.0,
-                            ),
-                          ],
-                        ),
+                          ),
+                          Icon(
+                            Icons.keyboard_arrow_down,
+                            color: Colors.white,
+                            size: 24.0,
+                          ),
+                        ],
                       ),
                     ),
                   ),

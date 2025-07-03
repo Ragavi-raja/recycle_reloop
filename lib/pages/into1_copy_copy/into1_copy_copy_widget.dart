@@ -47,7 +47,7 @@ class _Into1CopyCopyWidgetState extends State<Into1CopyCopyWidget> {
           top: true,
           child: Container(
             width: double.infinity,
-            height: double.infinity,
+            height: MediaQuery.sizeOf(context).height * 1.0,
             decoration: BoxDecoration(
               color: FlutterFlowTheme.of(context).secondaryBackground,
               shape: BoxShape.rectangle,

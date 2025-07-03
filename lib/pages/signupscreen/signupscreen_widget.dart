@@ -36,16 +36,17 @@ class _SignupscreenWidgetState extends State<SignupscreenWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: GestureDetector(
-        onTap: () {
-          FocusScope.of(context).unfocus();
-          FocusManager.instance.primaryFocus?.unfocus();
-        },
-        child: Scaffold(
-          key: scaffoldKey,
-          backgroundColor: FlutterFlowTheme.of(context).c9,
-          body: Stack(
+    return GestureDetector(
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
+      child: Scaffold(
+        key: scaffoldKey,
+        backgroundColor: FlutterFlowTheme.of(context).c9,
+        body: Container(
+          height: MediaQuery.sizeOf(context).height * 1.0,
+          child: Stack(
             children: [
               Align(
                 alignment: AlignmentDirectional(0.0, -1.0),

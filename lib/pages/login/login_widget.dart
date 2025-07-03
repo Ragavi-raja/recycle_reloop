@@ -44,64 +44,68 @@ class _LoginWidgetState extends State<LoginWidget> {
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).c9,
-        body: Stack(
-          children: [
-            Align(
-              alignment: AlignmentDirectional(0.0, -1.0),
-              child: Stack(
-                children: [],
+        body: Container(
+          width: MediaQuery.sizeOf(context).width * 1.0,
+          height: MediaQuery.sizeOf(context).height * 1.0,
+          child: Stack(
+            children: [
+              Align(
+                alignment: AlignmentDirectional(0.0, -1.0),
+                child: Stack(
+                  children: [],
+                ),
               ),
-            ),
-            Align(
-              alignment: AlignmentDirectional(0.0, 1.01),
-              child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 275.0, 0.0, 0.0),
-                child: Container(
-                  width: double.infinity,
-                  height: double.infinity,
-                  decoration: BoxDecoration(
-                    color: FlutterFlowTheme.of(context).secondaryBackground,
-                    borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(0.0),
-                      bottomRight: Radius.circular(0.0),
-                      topLeft: Radius.circular(48.0),
-                      topRight: Radius.circular(48.0),
+              Align(
+                alignment: AlignmentDirectional(0.0, 1.01),
+                child: Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 275.0, 0.0, 0.0),
+                  child: Container(
+                    width: double.infinity,
+                    height: double.infinity,
+                    decoration: BoxDecoration(
+                      color: FlutterFlowTheme.of(context).secondaryBackground,
+                      borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.circular(0.0),
+                        bottomRight: Radius.circular(0.0),
+                        topLeft: Radius.circular(48.0),
+                        topRight: Radius.circular(48.0),
+                      ),
+                    ),
+                    child: Stack(
+                      children: [
+                        Column(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  10.0, 60.0, 10.0, 13.0),
+                              child: wrapWithModel(
+                                model: _model.loginComponent1Model,
+                                updateCallback: () => safeSetState(() {}),
+                                child: LoginComponent1Widget(),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
                     ),
                   ),
-                  child: Stack(
-                    children: [
-                      Column(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                10.0, 60.0, 10.0, 13.0),
-                            child: wrapWithModel(
-                              model: _model.loginComponent1Model,
-                              updateCallback: () => safeSetState(() {}),
-                              child: LoginComponent1Widget(),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
+                ),
+              ),
+              Align(
+                alignment: AlignmentDirectional(0.01, -1.0),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(8.0),
+                  child: Image.asset(
+                    'assets/images/9eaequ.png',
+                    width: 400.0,
+                    height: 344.34,
+                    fit: BoxFit.cover,
                   ),
                 ),
               ),
-            ),
-            Align(
-              alignment: AlignmentDirectional(0.01, -1.0),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(8.0),
-                child: Image.asset(
-                  'assets/images/9eaequ.png',
-                  width: 400.0,
-                  height: 344.34,
-                  fit: BoxFit.cover,
-                ),
-              ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
