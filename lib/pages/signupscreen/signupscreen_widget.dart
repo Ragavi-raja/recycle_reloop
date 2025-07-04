@@ -57,7 +57,7 @@ class _SignupscreenWidgetState extends State<SignupscreenWidget> {
               Align(
                 alignment: AlignmentDirectional(0.0, 1.01),
                 child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 275.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 265.0, 0.0, 0.0),
                   child: Container(
                     width: double.infinity,
                     height: double.infinity,
@@ -78,7 +78,7 @@ class _SignupscreenWidgetState extends State<SignupscreenWidget> {
                             Expanded(
                               child: Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 54.0, 0.0, 0.0),
+                                    0.0, 105.0, 0.0, 0.0),
                                 child: wrapWithModel(
                                   model: _model.signupComponentModel,
                                   updateCallback: () => safeSetState(() {}),
@@ -100,7 +100,7 @@ class _SignupscreenWidgetState extends State<SignupscreenWidget> {
                   child: Image.asset(
                     'assets/images/9eaequ.png',
                     width: 400.0,
-                    height: 344.3,
+                    height: 400.0,
                     fit: BoxFit.cover,
                   ),
                 ),

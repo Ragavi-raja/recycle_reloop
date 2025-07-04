@@ -38,146 +38,163 @@ class _SelectscrapBottomsheetWidgetState
 
   @override
   Widget build(BuildContext context) {
-    return Align(
-      alignment: AlignmentDirectional(0.0, 1.0),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        mainAxisAlignment: MainAxisAlignment.end,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            'Select the Scrap Type',
-            textAlign: TextAlign.start,
-            style: FlutterFlowTheme.of(context).titleLarge.override(
-                  fontFamily: FlutterFlowTheme.of(context).titleLargeFamily,
-                  color: FlutterFlowTheme.of(context).c1,
-                  letterSpacing: 0.0,
-                  fontWeight: FontWeight.w600,
-                  useGoogleFonts:
-                      !FlutterFlowTheme.of(context).titleLargeIsCustom,
-                ),
-          ),
-          Row(
-            mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+    return Container(
+      width: MediaQuery.sizeOf(context).width * 1.0,
+      height: 300.0,
+      decoration: BoxDecoration(
+        color: FlutterFlowTheme.of(context).secondaryBackground,
+      ),
+      child: Align(
+        alignment: AlignmentDirectional(0.0, 1.0),
+        child: Padding(
+          padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 74.0),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(
-                width: 175.0,
-                height: 100.0,
-                decoration: BoxDecoration(
-                  color: FlutterFlowTheme.of(context).secondaryBackground,
-                  borderRadius: BorderRadius.circular(12.0),
-                  border: Border.all(
-                    color: Color(0xFFE0E0E0),
-                    width: 1.0,
-                  ),
-                ),
-                child: Padding(
-                  padding: EdgeInsets.all(16.0),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(8.0),
-                        child: Image.asset(
-                          'assets/images/money-bag-02.png',
-                          width: 28.0,
-                          height: 28.0,
-                          fit: BoxFit.cover,
-                        ),
+              Text(
+                'Select the Scrap Type',
+                textAlign: TextAlign.start,
+                style: FlutterFlowTheme.of(context).titleLarge.override(
+                      fontFamily: FlutterFlowTheme.of(context).titleLargeFamily,
+                      color: FlutterFlowTheme.of(context).c1,
+                      letterSpacing: 0.0,
+                      fontWeight: FontWeight.w600,
+                      useGoogleFonts:
+                          !FlutterFlowTheme.of(context).titleLargeIsCustom,
+                    ),
+              ),
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Container(
+                    width: 175.0,
+                    height: 100.0,
+                    decoration: BoxDecoration(
+                      color: FlutterFlowTheme.of(context).secondaryBackground,
+                      borderRadius: BorderRadius.circular(12.0),
+                      border: Border.all(
+                        color: Color(0xFFE0E0E0),
+                        width: 1.0,
                       ),
-                      Text(
-                        'Sell Scrap',
-                        textAlign: TextAlign.center,
-                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily:
-                                  FlutterFlowTheme.of(context).bodyMediumFamily,
-                              color: FlutterFlowTheme.of(context).b1,
-                              fontSize: 16.0,
-                              letterSpacing: 0.0,
-                              fontWeight: FontWeight.bold,
-                              useGoogleFonts: !FlutterFlowTheme.of(context)
-                                  .bodyMediumIsCustom,
+                    ),
+                    child: Padding(
+                      padding: EdgeInsets.all(16.0),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(8.0),
+                            child: Image.asset(
+                              'assets/images/money-bag-02.png',
+                              width: 28.0,
+                              height: 28.0,
+                              fit: BoxFit.cover,
                             ),
+                          ),
+                          Text(
+                            'Sell Scrap',
+                            textAlign: TextAlign.center,
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .bodyMediumFamily,
+                                  color: FlutterFlowTheme.of(context).b1,
+                                  fontSize: 16.0,
+                                  letterSpacing: 0.0,
+                                  fontWeight: FontWeight.bold,
+                                  useGoogleFonts: !FlutterFlowTheme.of(context)
+                                      .bodyMediumIsCustom,
+                                ),
+                          ),
+                        ].divide(SizedBox(height: 8.0)),
                       ),
-                    ].divide(SizedBox(height: 8.0)),
+                    ),
                   ),
+                  Container(
+                    width: 175.0,
+                    height: 100.0,
+                    decoration: BoxDecoration(
+                      color: FlutterFlowTheme.of(context).secondaryBackground,
+                      borderRadius: BorderRadius.circular(12.0),
+                      border: Border.all(
+                        color: Color(0xFFE0E0E0),
+                        width: 1.0,
+                      ),
+                    ),
+                    child: Padding(
+                      padding: EdgeInsets.all(16.0),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(8.0),
+                            child: Image.asset(
+                              'assets/images/give-blood.png',
+                              width: 28.0,
+                              height: 28.0,
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                          Text(
+                            'Donate Scrap',
+                            textAlign: TextAlign.center,
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .bodyMediumFamily,
+                                  color: FlutterFlowTheme.of(context).b1,
+                                  fontSize: 16.0,
+                                  letterSpacing: 0.0,
+                                  fontWeight: FontWeight.bold,
+                                  useGoogleFonts: !FlutterFlowTheme.of(context)
+                                      .bodyMediumIsCustom,
+                                ),
+                          ),
+                        ].divide(SizedBox(height: 8.0)),
+                      ),
+                    ),
+                  ),
+                ].divide(SizedBox(width: 15.0)),
+              ),
+              FFButtonWidget(
+                onPressed: () {
+                  print('Button pressed ...');
+                },
+                text: 'Continue',
+                options: FFButtonOptions(
+                  width: double.infinity,
+                  height: 48.0,
+                  padding: EdgeInsets.all(8.0),
+                  iconPadding:
+                      EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                  color: Color(0xFF28A745),
+                  textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
+                        fontFamily:
+                            FlutterFlowTheme.of(context).bodyMediumFamily,
+                        color: Colors.white,
+                        fontSize: 16.0,
+                        letterSpacing: 0.0,
+                        fontWeight: FontWeight.normal,
+                        useGoogleFonts:
+                            !FlutterFlowTheme.of(context).bodyMediumIsCustom,
+                      ),
+                  elevation: 0.0,
+                  borderRadius: BorderRadius.circular(8.0),
                 ),
               ),
-              Container(
-                width: 175.0,
-                height: 100.0,
-                decoration: BoxDecoration(
-                  color: FlutterFlowTheme.of(context).secondaryBackground,
-                  borderRadius: BorderRadius.circular(12.0),
-                  border: Border.all(
-                    color: Color(0xFFE0E0E0),
-                    width: 1.0,
-                  ),
-                ),
-                child: Padding(
-                  padding: EdgeInsets.all(16.0),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(8.0),
-                        child: Image.asset(
-                          'assets/images/give-blood.png',
-                          width: 28.0,
-                          height: 28.0,
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                      Text(
-                        'Donate Scrap',
-                        textAlign: TextAlign.center,
-                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily:
-                                  FlutterFlowTheme.of(context).bodyMediumFamily,
-                              color: FlutterFlowTheme.of(context).b1,
-                              fontSize: 16.0,
-                              letterSpacing: 0.0,
-                              fontWeight: FontWeight.bold,
-                              useGoogleFonts: !FlutterFlowTheme.of(context)
-                                  .bodyMediumIsCustom,
-                            ),
-                      ),
-                    ].divide(SizedBox(height: 8.0)),
-                  ),
-                ),
-              ),
-            ].divide(SizedBox(width: 15.0)),
+            ].divide(SizedBox(height: 20.0)),
           ),
-          FFButtonWidget(
-            onPressed: () {
-              print('Button pressed ...');
-            },
-            text: 'Continue',
-            options: FFButtonOptions(
-              width: double.infinity,
-              height: 48.0,
-              padding: EdgeInsets.all(8.0),
-              iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-              color: Color(0xFF28A745),
-              textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                    color: Colors.white,
-                    fontSize: 16.0,
-                    letterSpacing: 0.0,
-                    fontWeight: FontWeight.normal,
-                    useGoogleFonts:
-                        !FlutterFlowTheme.of(context).bodyMediumIsCustom,
-                  ),
-              elevation: 0.0,
-              borderRadius: BorderRadius.circular(8.0),
-            ),
-          ),
-        ].divide(SizedBox(height: 20.0)),
+        ),
       ),
     );
   }

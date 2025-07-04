@@ -59,7 +59,8 @@ class _LoginComponent1WidgetState extends State<LoginComponent1Widget> {
           });
         },
         child: Column(
-          mainAxisSize: MainAxisSize.max,
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Column(
@@ -74,13 +75,13 @@ class _LoginComponent1WidgetState extends State<LoginComponent1Widget> {
                   Text(
                     'Welcome back to',
                     textAlign: TextAlign.center,
-                    style: FlutterFlowTheme.of(context).labelLarge.override(
+                    style: FlutterFlowTheme.of(context).bodyMedium.override(
                           fontFamily:
-                              FlutterFlowTheme.of(context).labelLargeFamily,
-                          color: FlutterFlowTheme.of(context).b1,
+                              FlutterFlowTheme.of(context).bodyMediumFamily,
+                          fontSize: 16.0,
                           letterSpacing: 0.0,
                           useGoogleFonts:
-                              !FlutterFlowTheme.of(context).labelLargeIsCustom,
+                              !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                         ),
                   ),
                 Container(
@@ -109,12 +110,12 @@ class _LoginComponent1WidgetState extends State<LoginComponent1Widget> {
             Padding(
               padding: EdgeInsets.all(8.0),
               child: Column(
-                mainAxisSize: MainAxisSize.max,
+                mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 40.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 37.0, 0.0, 0.0),
                     child: Container(
                       width: double.infinity,
                       child: TextFormField(
@@ -149,7 +150,7 @@ class _LoginComponent1WidgetState extends State<LoginComponent1Widget> {
                           ),
                           focusedBorder: OutlineInputBorder(
                             borderSide: BorderSide(
-                              color: Colors.green,
+                              color: Color(0x00000000),
                               width: 1.0,
                             ),
                             borderRadius: BorderRadius.circular(8.0),
@@ -171,8 +172,6 @@ class _LoginComponent1WidgetState extends State<LoginComponent1Widget> {
                           filled: true,
                           fillColor:
                               FlutterFlowTheme.of(context).secondaryBackground,
-                          contentPadding: EdgeInsetsDirectional.fromSTEB(
-                              16.0, 12.0, 16.0, 12.0),
                         ),
                         style: FlutterFlowTheme.of(context).labelSmall.override(
                               fontFamily:
@@ -191,7 +190,6 @@ class _LoginComponent1WidgetState extends State<LoginComponent1Widget> {
                                 maxLength}) =>
                             null,
                         keyboardType: TextInputType.phone,
-                        cursorColor: Colors.green,
                         validator: _model
                             .loginMobileNumberTextControllerValidator
                             .asValidator(context),
@@ -201,67 +199,61 @@ class _LoginComponent1WidgetState extends State<LoginComponent1Widget> {
                       ),
                     ),
                   ),
-                  Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Theme(
-                          data: ThemeData(
-                            checkboxTheme: CheckboxThemeData(
-                              visualDensity: VisualDensity.compact,
-                              materialTapTargetSize:
-                                  MaterialTapTargetSize.shrinkWrap,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(4.0),
-                              ),
+                  Row(
+                    mainAxisSize: MainAxisSize.min,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Theme(
+                        data: ThemeData(
+                          checkboxTheme: CheckboxThemeData(
+                            visualDensity: VisualDensity.compact,
+                            materialTapTargetSize:
+                                MaterialTapTargetSize.shrinkWrap,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(4.0),
                             ),
-                            unselectedWidgetColor:
-                                FlutterFlowTheme.of(context).warning,
                           ),
-                          child: Checkbox(
-                            value: _model.checkboxValue ??= true,
-                            onChanged: (newValue) async {
-                              safeSetState(
-                                  () => _model.checkboxValue = newValue!);
-                            },
-                            side: (FlutterFlowTheme.of(context).warning != null)
-                                ? BorderSide(
-                                    width: 2,
-                                    color:
-                                        FlutterFlowTheme.of(context).warning,
-                                  )
-                                : null,
-                            activeColor: FlutterFlowTheme.of(context).c5,
-                            checkColor: FlutterFlowTheme.of(context)
-                                .secondaryBackground,
-                          ),
+                          unselectedWidgetColor:
+                              FlutterFlowTheme.of(context).warning,
                         ),
-                        Text(
-                          'Remember me',
-                          style: FlutterFlowTheme.of(context)
-                              .bodyMedium
-                              .override(
-                                fontFamily: FlutterFlowTheme.of(context)
-                                    .bodyMediumFamily,
-                                color: Color(0xFF1C1C1C),
-                                fontSize: 12.0,
-                                letterSpacing: 0.0,
-                                fontWeight: FontWeight.w500,
-                                useGoogleFonts: !FlutterFlowTheme.of(context)
-                                    .bodyMediumIsCustom,
-                              ),
+                        child: Checkbox(
+                          value: _model.checkboxValue ??= true,
+                          onChanged: (newValue) async {
+                            safeSetState(
+                                () => _model.checkboxValue = newValue!);
+                          },
+                          side: (FlutterFlowTheme.of(context).warning != null)
+                              ? BorderSide(
+                                  width: 2,
+                                  color: FlutterFlowTheme.of(context).warning,
+                                )
+                              : null,
+                          activeColor: FlutterFlowTheme.of(context).c5,
+                          checkColor:
+                              FlutterFlowTheme.of(context).secondaryBackground,
                         ),
-                      ].divide(SizedBox(width: 8.0)),
-                    ),
+                      ),
+                      Text(
+                        'Remember me',
+                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                              fontFamily:
+                                  FlutterFlowTheme.of(context).bodyMediumFamily,
+                              color: Color(0xFF1C1C1C),
+                              fontSize: 12.0,
+                              letterSpacing: 0.0,
+                              fontWeight: FontWeight.w500,
+                              useGoogleFonts: !FlutterFlowTheme.of(context)
+                                  .bodyMediumIsCustom,
+                            ),
+                      ),
+                    ],
                   ),
                 ],
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(8.0, 40.0, 8.0, 0.0),
+              padding: EdgeInsetsDirectional.fromSTEB(8.0, 20.0, 8.0, 0.0),
               child: FutureBuilder<ApiCallResponse>(
                 future: LoginInputCall.call(),
                 builder: (context, snapshot) {
@@ -441,7 +433,7 @@ class _LoginComponent1WidgetState extends State<LoginComponent1Widget> {
                           shape: BoxShape.circle,
                           border: Border.all(
                             color: Colors.green,
-                            width: 2.0,
+                            width: 1.0,
                           ),
                         ),
                         child: Align(
@@ -469,7 +461,7 @@ class _LoginComponent1WidgetState extends State<LoginComponent1Widget> {
                           shape: BoxShape.circle,
                           border: Border.all(
                             color: Colors.green,
-                            width: 2.0,
+                            width: 1.0,
                           ),
                         ),
                         child: Align(
@@ -488,7 +480,7 @@ class _LoginComponent1WidgetState extends State<LoginComponent1Widget> {
                           shape: BoxShape.circle,
                           border: Border.all(
                             color: Colors.green,
-                            width: 2.0,
+                            width: 1.0,
                           ),
                         ),
                         child: Align(

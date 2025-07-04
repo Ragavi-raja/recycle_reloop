@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '/main.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 
 import '/index.dart';
@@ -52,14 +51,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => LoginWidget(),
         ),
         FFRoute(
-            name: CertificatepageWidget.routeName,
-            path: CertificatepageWidget.routePath,
-            builder: (context, params) => params.isEmpty
-                ? NavBarPage(initialPage: 'certificatepage')
-                : NavBarPage(
-                    initialPage: 'certificatepage',
-                    page: CertificatepageWidget(),
-                  )),
+          name: CertificatepageWidget.routeName,
+          path: CertificatepageWidget.routePath,
+          builder: (context, params) => CertificatepageWidget(),
+        ),
         FFRoute(
           name: Selscrapimage1Widget.routeName,
           path: Selscrapimage1Widget.routePath,
@@ -98,9 +93,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: HomePageWidget.routeName,
           path: HomePageWidget.routePath,
-          builder: (context, params) => params.isEmpty
-              ? NavBarPage(initialPage: 'homePage')
-              : HomePageWidget(),
+          builder: (context, params) => HomePageWidget(),
         ),
         FFRoute(
           name: NewlocationWidget.routeName,
@@ -128,19 +121,15 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => ProfileUpdateWidget(),
         ),
         FFRoute(
-            name: SellscrapWidget.routeName,
-            path: SellscrapWidget.routePath,
-            builder: (context, params) => params.isEmpty
-                ? NavBarPage(initialPage: 'sellscrap')
-                : NavBarPage(
-                    initialPage: 'sellscrap',
-                    page: SellscrapWidget(
-                      pageName: params.getParam(
-                        'pageName',
-                        ParamType.String,
-                      ),
-                    ),
-                  )),
+          name: SellscrapWidget.routeName,
+          path: SellscrapWidget.routePath,
+          builder: (context, params) => SellscrapWidget(
+            pageName: params.getParam(
+              'pageName',
+              ParamType.String,
+            ),
+          ),
+        ),
         FFRoute(
           name: ProfilemobWidget.routeName,
           path: ProfilemobWidget.routePath,
@@ -190,6 +179,51 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: SucceesspageWidget.routeName,
           path: SucceesspageWidget.routePath,
           builder: (context, params) => SucceesspageWidget(),
+        ),
+        FFRoute(
+          name: Selscrapimage1CopyWidget.routeName,
+          path: Selscrapimage1CopyWidget.routePath,
+          builder: (context, params) => Selscrapimage1CopyWidget(
+            pageName: params.getParam(
+              'pageName',
+              ParamType.String,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: Sellscrap2Widget.routeName,
+          path: Sellscrap2Widget.routePath,
+          builder: (context, params) => Sellscrap2Widget(),
+        ),
+        FFRoute(
+          name: HistoryWidget.routeName,
+          path: HistoryWidget.routePath,
+          builder: (context, params) => HistoryWidget(),
+        ),
+        FFRoute(
+          name: ListhistoryWidget.routeName,
+          path: ListhistoryWidget.routePath,
+          builder: (context, params) => ListhistoryWidget(),
+        ),
+        FFRoute(
+          name: CollectionpageWidget.routeName,
+          path: CollectionpageWidget.routePath,
+          builder: (context, params) => CollectionpageWidget(),
+        ),
+        FFRoute(
+          name: QuoteWidget.routeName,
+          path: QuoteWidget.routePath,
+          builder: (context, params) => QuoteWidget(),
+        ),
+        FFRoute(
+          name: ContributetoWidget.routeName,
+          path: ContributetoWidget.routePath,
+          builder: (context, params) => ContributetoWidget(),
+        ),
+        FFRoute(
+          name: CorporateWidget.routeName,
+          path: CorporateWidget.routePath,
+          builder: (context, params) => CorporateWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

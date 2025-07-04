@@ -55,7 +55,7 @@ class _OTPScreenWidgetState extends State<OTPScreenWidget> {
             Align(
               alignment: AlignmentDirectional(0.0, 1.01),
               child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 275.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 265.0, 0.0, 0.0),
                 child: Container(
                   width: double.infinity,
                   height: double.infinity,
@@ -75,7 +75,7 @@ class _OTPScreenWidgetState extends State<OTPScreenWidget> {
                         children: [
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 65.0, 0.0, 0.0),
+                                0.0, 108.0, 0.0, 0.0),
                             child: wrapWithModel(
                               model: _model.otpComponentModel,
                               updateCallback: () => safeSetState(() {}),
@@ -96,7 +96,7 @@ class _OTPScreenWidgetState extends State<OTPScreenWidget> {
                 child: Image.asset(
                   'assets/images/9eaequ.png',
                   width: 400.0,
-                  height: 344.3,
+                  height: 400.0,
                   fit: BoxFit.cover,
                 ),
               ),

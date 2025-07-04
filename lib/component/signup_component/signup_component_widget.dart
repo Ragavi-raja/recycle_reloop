@@ -50,8 +50,8 @@ class _SignupComponentWidgetState extends State<SignupComponentWidget> {
   @override
   Widget build(BuildContext context) {
     return Column(
-      mainAxisSize: MainAxisSize.min,
-      mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisSize: MainAxisSize.max,
+      mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Column(
@@ -407,11 +407,12 @@ class _SignupComponentWidgetState extends State<SignupComponentWidget> {
             ].divide(SizedBox(height: 0.0)),
           ),
         ),
+        Spacer(),
         Align(
           alignment: AlignmentDirectional(0.0, 0.0),
           child: Builder(
             builder: (context) => Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+              padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 4.0),
               child: FFButtonWidget(
                 onPressed: () async {
                   showAlignedDialog(
@@ -434,7 +435,7 @@ class _SignupComponentWidgetState extends State<SignupComponentWidget> {
                 text: 'Sign up',
                 options: FFButtonOptions(
                   width: double.infinity,
-                  height: 36.0,
+                  height: 48.0,
                   padding: EdgeInsets.all(8.0),
                   iconPadding:
                       EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
@@ -511,7 +512,7 @@ class _SignupComponentWidgetState extends State<SignupComponentWidget> {
             ),
           ].divide(SizedBox(height: 16.0)),
         ),
-      ].divide(SizedBox(height: 24.0)),
+      ],
     );
   }
 }

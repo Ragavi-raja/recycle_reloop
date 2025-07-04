@@ -29,3 +29,12 @@ export '/communitytab2/communitytab2_widget.dart' show Communitytab2Widget;
 export '/createpost/createpost_widget.dart' show CreatepostWidget;
 export '/joincommunity/joincommunity_widget.dart' show JoincommunityWidget;
 export '/succeesspage/succeesspage_widget.dart' show SucceesspageWidget;
+export '/pages/selscrapimage1_copy/selscrapimage1_copy_widget.dart'
+    show Selscrapimage1CopyWidget;
+export '/sellscrap2/sellscrap2_widget.dart' show Sellscrap2Widget;
+export '/history/history_widget.dart' show HistoryWidget;
+export '/listhistory/listhistory_widget.dart' show ListhistoryWidget;
+export '/collectionpage/collectionpage_widget.dart' show CollectionpageWidget;
+export '/quote/quote_widget.dart' show QuoteWidget;
+export '/contributeto/contributeto_widget.dart' show ContributetoWidget;
+export '/corporate/corporate_widget.dart' show CorporateWidget;

@@ -58,7 +58,7 @@ class _OtpComponentWidgetState extends State<OtpComponentWidget> {
                 desktop: false,
               ))
                 Text(
-                  'Welcome back to',
+                  'OTP Verification',
                   textAlign: TextAlign.center,
                   style: FlutterFlowTheme.of(context).labelLarge.override(
                         fontFamily:
@@ -123,8 +123,8 @@ class _OtpComponentWidgetState extends State<OtpComponentWidget> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Container(
-                        width: 50.0,
-                        height: 50.0,
+                        width: 40.0,
+                        height: 40.0,
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(8.0),
@@ -157,8 +157,8 @@ class _OtpComponentWidgetState extends State<OtpComponentWidget> {
                         ),
                       ),
                       Container(
-                        width: 50.0,
-                        height: 50.0,
+                        width: 40.0,
+                        height: 40.0,
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(8.0),
@@ -191,8 +191,8 @@ class _OtpComponentWidgetState extends State<OtpComponentWidget> {
                         ),
                       ),
                       Container(
-                        width: 50.0,
-                        height: 50.0,
+                        width: 40.0,
+                        height: 40.0,
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(8.0),
@@ -225,8 +225,8 @@ class _OtpComponentWidgetState extends State<OtpComponentWidget> {
                         ),
                       ),
                       Container(
-                        width: 50.0,
-                        height: 50.0,
+                        width: 40.0,
+                        height: 40.0,
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(8.0),
@@ -301,18 +301,17 @@ class _OtpComponentWidgetState extends State<OtpComponentWidget> {
                                     0.0, 0.0, 0.0, 0.0),
                                 color: FlutterFlowTheme.of(context).c5,
                                 textStyle: FlutterFlowTheme.of(context)
-                                    .titleMedium
+                                    .bodyLarge
                                     .override(
                                       fontFamily: FlutterFlowTheme.of(context)
-                                          .titleMediumFamily,
+                                          .bodyLargeFamily,
                                       color: FlutterFlowTheme.of(context)
                                           .secondaryBackground,
-                                      fontSize: 16.0,
                                       letterSpacing: 0.0,
-                                      fontWeight: FontWeight.normal,
+                                      fontWeight: FontWeight.bold,
                                       useGoogleFonts:
                                           !FlutterFlowTheme.of(context)
-                                              .titleMediumIsCustom,
+                                              .bodyLargeIsCustom,
                                     ),
                                 elevation: 0.0,
                                 borderSide: BorderSide(
