@@ -134,8 +134,63 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                 ? NavBarPage(initialPage: 'sellscrap')
                 : NavBarPage(
                     initialPage: 'sellscrap',
-                    page: SellscrapWidget(),
-                  ))
+                    page: SellscrapWidget(
+                      pageName: params.getParam(
+                        'pageName',
+                        ParamType.String,
+                      ),
+                    ),
+                  )),
+        FFRoute(
+          name: ProfilemobWidget.routeName,
+          path: ProfilemobWidget.routePath,
+          builder: (context, params) => ProfilemobWidget(),
+        ),
+        FFRoute(
+          name: ProfilemobotpWidget.routeName,
+          path: ProfilemobotpWidget.routePath,
+          builder: (context, params) => ProfilemobotpWidget(),
+        ),
+        FFRoute(
+          name: PaymentprofWidget.routeName,
+          path: PaymentprofWidget.routePath,
+          builder: (context, params) => PaymentprofWidget(),
+        ),
+        FFRoute(
+          name: ProfaddreWidget.routeName,
+          path: ProfaddreWidget.routePath,
+          builder: (context, params) => ProfaddreWidget(),
+        ),
+        FFRoute(
+          name: CouponpageWidget.routeName,
+          path: CouponpageWidget.routePath,
+          builder: (context, params) => CouponpageWidget(),
+        ),
+        FFRoute(
+          name: ComunityscreenWidget.routeName,
+          path: ComunityscreenWidget.routePath,
+          builder: (context, params) => ComunityscreenWidget(),
+        ),
+        FFRoute(
+          name: Communitytab2Widget.routeName,
+          path: Communitytab2Widget.routePath,
+          builder: (context, params) => Communitytab2Widget(),
+        ),
+        FFRoute(
+          name: CreatepostWidget.routeName,
+          path: CreatepostWidget.routePath,
+          builder: (context, params) => CreatepostWidget(),
+        ),
+        FFRoute(
+          name: JoincommunityWidget.routeName,
+          path: JoincommunityWidget.routePath,
+          builder: (context, params) => JoincommunityWidget(),
+        ),
+        FFRoute(
+          name: SucceesspageWidget.routeName,
+          path: SucceesspageWidget.routePath,
+          builder: (context, params) => SucceesspageWidget(),
+        )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
 

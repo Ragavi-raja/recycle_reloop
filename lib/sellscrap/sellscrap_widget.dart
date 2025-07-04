@@ -7,7 +7,12 @@ import 'sellscrap_model.dart';
 export 'sellscrap_model.dart';
 
 class SellscrapWidget extends StatefulWidget {
-  const SellscrapWidget({super.key});
+  const SellscrapWidget({
+    super.key,
+    String? pageName,
+  }) : this.pageName = pageName ?? 'Sell Scrap';
+
+  final String pageName;
 
   static String routeName = 'sellscrap';
   static String routePath = '/sellscrap';
@@ -65,12 +70,19 @@ class _SellscrapWidgetState extends State<SellscrapWidget> {
       },
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+        backgroundColor: FlutterFlowTheme.of(context).transparentTransparent,
         body: SafeArea(
           top: true,
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [],
+          child: Align(
+            alignment: AlignmentDirectional(0.0, 1.0),
+            child: Padding(
+              padding: EdgeInsetsDirectional.fromSTEB(0.0, 500.0, 0.0, 0.0),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [],
+              ),
+            ),
           ),
         ),
       ),

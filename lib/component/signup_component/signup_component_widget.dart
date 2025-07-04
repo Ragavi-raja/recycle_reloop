@@ -51,6 +51,7 @@ class _SignupComponentWidgetState extends State<SignupComponentWidget> {
   Widget build(BuildContext context) {
     return Column(
       mainAxisSize: MainAxisSize.min,
+      mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Column(
@@ -343,7 +344,7 @@ class _SignupComponentWidgetState extends State<SignupComponentWidget> {
                 ),
               ),
               Row(
-                mainAxisSize: MainAxisSize.max,
+                mainAxisSize: MainAxisSize.min,
                 children: [
                   Theme(
                     data: ThemeData(
@@ -406,55 +407,50 @@ class _SignupComponentWidgetState extends State<SignupComponentWidget> {
             ].divide(SizedBox(height: 0.0)),
           ),
         ),
-        Expanded(
-          child: Align(
-            alignment: AlignmentDirectional(0.0, 1.0),
-            child: Builder(
-              builder: (context) => Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                child: FFButtonWidget(
-                  onPressed: () async {
-                    showAlignedDialog(
-                      barrierDismissible: false,
-                      context: context,
-                      isGlobal: false,
-                      avoidOverflow: true,
-                      targetAnchor: AlignmentDirectional(0.0, 0.0)
-                          .resolve(Directionality.of(context)),
-                      followerAnchor: AlignmentDirectional(0.0, 0.0)
-                          .resolve(Directionality.of(context)),
-                      builder: (dialogContext) {
-                        return Material(
-                          color: Colors.transparent,
-                          child: SignupSucessWidget(),
-                        );
-                      },
-                    );
-                  },
-                  text: 'Sign up',
-                  options: FFButtonOptions(
-                    width: double.infinity,
-                    height: 56.0,
-                    padding: EdgeInsets.all(8.0),
-                    iconPadding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                    color: Color(0xFF00CC66),
-                    textStyle: FlutterFlowTheme.of(context)
-                        .titleMedium
-                        .override(
-                          fontFamily:
-                              FlutterFlowTheme.of(context).titleMediumFamily,
-                          color:
-                              FlutterFlowTheme.of(context).secondaryBackground,
-                          fontSize: 16.0,
-                          letterSpacing: 0.0,
-                          fontWeight: FontWeight.bold,
-                          useGoogleFonts:
-                              !FlutterFlowTheme.of(context).titleMediumIsCustom,
-                        ),
-                    elevation: 0.0,
-                    borderRadius: BorderRadius.circular(12.0),
-                  ),
+        Align(
+          alignment: AlignmentDirectional(0.0, 0.0),
+          child: Builder(
+            builder: (context) => Padding(
+              padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+              child: FFButtonWidget(
+                onPressed: () async {
+                  showAlignedDialog(
+                    barrierDismissible: false,
+                    context: context,
+                    isGlobal: false,
+                    avoidOverflow: true,
+                    targetAnchor: AlignmentDirectional(0.0, 0.0)
+                        .resolve(Directionality.of(context)),
+                    followerAnchor: AlignmentDirectional(0.0, 0.0)
+                        .resolve(Directionality.of(context)),
+                    builder: (dialogContext) {
+                      return Material(
+                        color: Colors.transparent,
+                        child: SignupSucessWidget(),
+                      );
+                    },
+                  );
+                },
+                text: 'Sign up',
+                options: FFButtonOptions(
+                  width: double.infinity,
+                  height: 36.0,
+                  padding: EdgeInsets.all(8.0),
+                  iconPadding:
+                      EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                  color: Color(0xFF00CC66),
+                  textStyle: FlutterFlowTheme.of(context).titleMedium.override(
+                        fontFamily:
+                            FlutterFlowTheme.of(context).titleMediumFamily,
+                        color: FlutterFlowTheme.of(context).secondaryBackground,
+                        fontSize: 16.0,
+                        letterSpacing: 0.0,
+                        fontWeight: FontWeight.bold,
+                        useGoogleFonts:
+                            !FlutterFlowTheme.of(context).titleMediumIsCustom,
+                      ),
+                  elevation: 0.0,
+                  borderRadius: BorderRadius.circular(12.0),
                 ),
               ),
             ),

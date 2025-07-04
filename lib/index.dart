@@ -19,3 +19,13 @@ export '/profilepage_parent/profilepage_parent_widget.dart'
 export '/profile_bonus/profile_bonus_widget.dart' show ProfileBonusWidget;
 export '/profile_update/profile_update_widget.dart' show ProfileUpdateWidget;
 export '/sellscrap/sellscrap_widget.dart' show SellscrapWidget;
+export '/profilemob/profilemob_widget.dart' show ProfilemobWidget;
+export '/profilemobotp/profilemobotp_widget.dart' show ProfilemobotpWidget;
+export '/paymentprof/paymentprof_widget.dart' show PaymentprofWidget;
+export '/profaddre/profaddre_widget.dart' show ProfaddreWidget;
+export '/couponpage/couponpage_widget.dart' show CouponpageWidget;
+export '/comunityscreen/comunityscreen_widget.dart' show ComunityscreenWidget;
+export '/communitytab2/communitytab2_widget.dart' show Communitytab2Widget;
+export '/createpost/createpost_widget.dart' show CreatepostWidget;
+export '/joincommunity/joincommunity_widget.dart' show JoincommunityWidget;
+export '/succeesspage/succeesspage_widget.dart' show SucceesspageWidget;

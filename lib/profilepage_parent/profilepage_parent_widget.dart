@@ -408,66 +408,76 @@ class _ProfilepageParentWidgetState extends State<ProfilepageParentWidget> {
                     Padding(
                       padding:
                           EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-                      child: Container(
-                        width: double.infinity,
-                        height: 56.0,
-                        decoration: BoxDecoration(
-                          color: FlutterFlowTheme.of(context).customColor1,
-                          borderRadius: BorderRadius.circular(12.0),
-                          border: Border.all(
-                            color: Color(0xFFE0E0E0),
-                            width: 1.0,
+                      child: InkWell(
+                        splashColor: Colors.transparent,
+                        focusColor: Colors.transparent,
+                        hoverColor: Colors.transparent,
+                        highlightColor: Colors.transparent,
+                        onTap: () async {
+                          context.pushNamed(ProfilemobWidget.routeName);
+                        },
+                        child: Container(
+                          width: double.infinity,
+                          height: 56.0,
+                          decoration: BoxDecoration(
+                            color: FlutterFlowTheme.of(context).customColor1,
+                            borderRadius: BorderRadius.circular(12.0),
+                            border: Border.all(
+                              color: Color(0xFFE0E0E0),
+                              width: 1.0,
+                            ),
                           ),
-                        ),
-                        child: Padding(
-                          padding: EdgeInsets.all(12.0),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Row(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Container(
-                                    width: 40.0,
-                                    height: 40.0,
-                                    decoration: BoxDecoration(
-                                      color: Color(0xFF848282),
-                                      shape: BoxShape.circle,
-                                    ),
-                                    child: Align(
-                                      alignment: AlignmentDirectional(0.0, 0.0),
-                                      child: Icon(
-                                        Icons.edit,
-                                        color: Colors.white,
-                                        size: 20.0,
+                          child: Padding(
+                            padding: EdgeInsets.all(12.0),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Container(
+                                      width: 40.0,
+                                      height: 40.0,
+                                      decoration: BoxDecoration(
+                                        color: Color(0xFF848282),
+                                        shape: BoxShape.circle,
+                                      ),
+                                      child: Align(
+                                        alignment:
+                                            AlignmentDirectional(0.0, 0.0),
+                                        child: Icon(
+                                          Icons.edit,
+                                          color: Colors.white,
+                                          size: 20.0,
+                                        ),
                                       ),
                                     ),
-                                  ),
-                                  Text(
-                                    'Change Mobile Number',
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyLarge
-                                        .override(
-                                          fontFamily:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyLargeFamily,
-                                          color: Color(0xFF1C1C1C),
-                                          letterSpacing: 0.0,
-                                          fontWeight: FontWeight.normal,
-                                          useGoogleFonts:
-                                              !FlutterFlowTheme.of(context)
-                                                  .bodyLargeIsCustom,
-                                        ),
-                                  ),
-                                ].divide(SizedBox(width: 12.0)),
-                              ),
-                              Icon(
-                                Icons.chevron_right,
-                                color: Color(0xFF848282),
-                                size: 20.0,
-                              ),
-                            ],
+                                    Text(
+                                      'Change Mobile Number',
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyLarge
+                                          .override(
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLargeFamily,
+                                            color: Color(0xFF1C1C1C),
+                                            letterSpacing: 0.0,
+                                            fontWeight: FontWeight.normal,
+                                            useGoogleFonts:
+                                                !FlutterFlowTheme.of(context)
+                                                    .bodyLargeIsCustom,
+                                          ),
+                                    ),
+                                  ].divide(SizedBox(width: 12.0)),
+                                ),
+                                Icon(
+                                  Icons.chevron_right,
+                                  color: Color(0xFF848282),
+                                  size: 20.0,
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
@@ -475,66 +485,76 @@ class _ProfilepageParentWidgetState extends State<ProfilepageParentWidget> {
                     Padding(
                       padding:
                           EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-                      child: Container(
-                        width: double.infinity,
-                        height: 56.0,
-                        decoration: BoxDecoration(
-                          color: FlutterFlowTheme.of(context).customColor1,
-                          borderRadius: BorderRadius.circular(12.0),
-                          border: Border.all(
-                            color: Color(0xFFE0E0E0),
-                            width: 1.0,
+                      child: InkWell(
+                        splashColor: Colors.transparent,
+                        focusColor: Colors.transparent,
+                        hoverColor: Colors.transparent,
+                        highlightColor: Colors.transparent,
+                        onTap: () async {
+                          context.pushNamed(PaymentprofWidget.routeName);
+                        },
+                        child: Container(
+                          width: double.infinity,
+                          height: 56.0,
+                          decoration: BoxDecoration(
+                            color: FlutterFlowTheme.of(context).customColor1,
+                            borderRadius: BorderRadius.circular(12.0),
+                            border: Border.all(
+                              color: Color(0xFFE0E0E0),
+                              width: 1.0,
+                            ),
                           ),
-                        ),
-                        child: Padding(
-                          padding: EdgeInsets.all(12.0),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Row(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Container(
-                                    width: 40.0,
-                                    height: 40.0,
-                                    decoration: BoxDecoration(
-                                      color: Color(0xFF848282),
-                                      shape: BoxShape.circle,
-                                    ),
-                                    child: Align(
-                                      alignment: AlignmentDirectional(0.0, 0.0),
-                                      child: Icon(
-                                        Icons.wallet,
-                                        color: Colors.white,
-                                        size: 20.0,
+                          child: Padding(
+                            padding: EdgeInsets.all(12.0),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Container(
+                                      width: 40.0,
+                                      height: 40.0,
+                                      decoration: BoxDecoration(
+                                        color: Color(0xFF848282),
+                                        shape: BoxShape.circle,
+                                      ),
+                                      child: Align(
+                                        alignment:
+                                            AlignmentDirectional(0.0, 0.0),
+                                        child: Icon(
+                                          Icons.wallet,
+                                          color: Colors.white,
+                                          size: 20.0,
+                                        ),
                                       ),
                                     ),
-                                  ),
-                                  Text(
-                                    'Payment mode',
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyLarge
-                                        .override(
-                                          fontFamily:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyLargeFamily,
-                                          color: Color(0xFF1C1C1C),
-                                          letterSpacing: 0.0,
-                                          fontWeight: FontWeight.normal,
-                                          useGoogleFonts:
-                                              !FlutterFlowTheme.of(context)
-                                                  .bodyLargeIsCustom,
-                                        ),
-                                  ),
-                                ].divide(SizedBox(width: 12.0)),
-                              ),
-                              Icon(
-                                Icons.chevron_right,
-                                color: Color(0xFF848282),
-                                size: 20.0,
-                              ),
-                            ],
+                                    Text(
+                                      'Payment mode',
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyLarge
+                                          .override(
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLargeFamily,
+                                            color: Color(0xFF1C1C1C),
+                                            letterSpacing: 0.0,
+                                            fontWeight: FontWeight.normal,
+                                            useGoogleFonts:
+                                                !FlutterFlowTheme.of(context)
+                                                    .bodyLargeIsCustom,
+                                          ),
+                                    ),
+                                  ].divide(SizedBox(width: 12.0)),
+                                ),
+                                Icon(
+                                  Icons.chevron_right,
+                                  color: Color(0xFF848282),
+                                  size: 20.0,
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
@@ -542,66 +562,76 @@ class _ProfilepageParentWidgetState extends State<ProfilepageParentWidget> {
                     Padding(
                       padding:
                           EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-                      child: Container(
-                        width: double.infinity,
-                        height: 56.0,
-                        decoration: BoxDecoration(
-                          color: Color(0xFFFAF9F9),
-                          borderRadius: BorderRadius.circular(12.0),
-                          border: Border.all(
-                            color: Color(0xFFE0E0E0),
-                            width: 1.0,
+                      child: InkWell(
+                        splashColor: Colors.transparent,
+                        focusColor: Colors.transparent,
+                        hoverColor: Colors.transparent,
+                        highlightColor: Colors.transparent,
+                        onTap: () async {
+                          context.pushNamed(ProfaddreWidget.routeName);
+                        },
+                        child: Container(
+                          width: double.infinity,
+                          height: 56.0,
+                          decoration: BoxDecoration(
+                            color: Color(0xFFFAF9F9),
+                            borderRadius: BorderRadius.circular(12.0),
+                            border: Border.all(
+                              color: Color(0xFFE0E0E0),
+                              width: 1.0,
+                            ),
                           ),
-                        ),
-                        child: Padding(
-                          padding: EdgeInsets.all(12.0),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Row(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Container(
-                                    width: 40.0,
-                                    height: 40.0,
-                                    decoration: BoxDecoration(
-                                      color: Color(0xFF848282),
-                                      shape: BoxShape.circle,
-                                    ),
-                                    child: Align(
-                                      alignment: AlignmentDirectional(0.0, 0.0),
-                                      child: Icon(
-                                        Icons.location_on,
-                                        color: Colors.white,
-                                        size: 20.0,
+                          child: Padding(
+                            padding: EdgeInsets.all(12.0),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Container(
+                                      width: 40.0,
+                                      height: 40.0,
+                                      decoration: BoxDecoration(
+                                        color: Color(0xFF848282),
+                                        shape: BoxShape.circle,
+                                      ),
+                                      child: Align(
+                                        alignment:
+                                            AlignmentDirectional(0.0, 0.0),
+                                        child: Icon(
+                                          Icons.location_on,
+                                          color: Colors.white,
+                                          size: 20.0,
+                                        ),
                                       ),
                                     ),
-                                  ),
-                                  Text(
-                                    'Your Address',
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyLarge
-                                        .override(
-                                          fontFamily:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyLargeFamily,
-                                          color: Color(0xFF1C1C1C),
-                                          letterSpacing: 0.0,
-                                          fontWeight: FontWeight.normal,
-                                          useGoogleFonts:
-                                              !FlutterFlowTheme.of(context)
-                                                  .bodyLargeIsCustom,
-                                        ),
-                                  ),
-                                ].divide(SizedBox(width: 12.0)),
-                              ),
-                              Icon(
-                                Icons.chevron_right,
-                                color: Color(0xFF848282),
-                                size: 20.0,
-                              ),
-                            ],
+                                    Text(
+                                      'Your Address',
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyLarge
+                                          .override(
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLargeFamily,
+                                            color: Color(0xFF1C1C1C),
+                                            letterSpacing: 0.0,
+                                            fontWeight: FontWeight.normal,
+                                            useGoogleFonts:
+                                                !FlutterFlowTheme.of(context)
+                                                    .bodyLargeIsCustom,
+                                          ),
+                                    ),
+                                  ].divide(SizedBox(width: 12.0)),
+                                ),
+                                Icon(
+                                  Icons.chevron_right,
+                                  color: Color(0xFF848282),
+                                  size: 20.0,
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),

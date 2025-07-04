@@ -1145,20 +1145,30 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Container(
-                              width: 72.0,
-                              height: 72.0,
-                              decoration: BoxDecoration(
-                                color: Color(0xFFEBF9F8),
-                                shape: BoxShape.circle,
-                              ),
-                              child: Align(
-                                alignment: AlignmentDirectional(0.0, 0.0),
-                                child: Image.asset(
-                                  'assets/images/Design_1h11.png',
-                                  width: 40.0,
-                                  height: 40.0,
-                                  fit: BoxFit.contain,
+                            InkWell(
+                              splashColor: Colors.transparent,
+                              focusColor: Colors.transparent,
+                              hoverColor: Colors.transparent,
+                              highlightColor: Colors.transparent,
+                              onTap: () async {
+                                context
+                                    .pushNamed(ComunityscreenWidget.routeName);
+                              },
+                              child: Container(
+                                width: 72.0,
+                                height: 72.0,
+                                decoration: BoxDecoration(
+                                  color: Color(0xFFEBF9F8),
+                                  shape: BoxShape.circle,
+                                ),
+                                child: Align(
+                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  child: Image.asset(
+                                    'assets/images/Design_1h11.png',
+                                    width: 40.0,
+                                    height: 40.0,
+                                    fit: BoxFit.contain,
+                                  ),
                                 ),
                               ),
                             ),

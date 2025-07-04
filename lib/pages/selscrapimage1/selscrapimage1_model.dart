@@ -1,4 +1,3 @@
-import '/components/button_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/index.dart';
 import 'selscrapimage1_widget.dart' show Selscrapimage1Widget;
@@ -15,19 +14,13 @@ class Selscrapimage1Model extends FlutterFlowModel<Selscrapimage1Widget> {
   FocusNode? textFieldFocusNode;
   TextEditingController? textController;
   String? Function(BuildContext, String?)? textControllerValidator;
-  // Model for Button component.
-  late ButtonModel buttonModel;
 
   @override
-  void initState(BuildContext context) {
-    buttonModel = createModel(context, () => ButtonModel());
-  }
+  void initState(BuildContext context) {}
 
   @override
   void dispose() {
     textFieldFocusNode?.dispose();
     textController?.dispose();
-
-    buttonModel.dispose();
   }
 }
